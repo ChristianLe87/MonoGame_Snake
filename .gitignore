@@ -93,6 +93,7 @@ x64/
 x86/
 bld/
 [Bb]in/
+!Content/bin
 [Oo]bj/
 [Ll]og/
 
