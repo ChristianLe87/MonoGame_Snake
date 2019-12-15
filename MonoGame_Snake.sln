@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snake_macOS", "Snake_macOS\Snake_macOS.csproj", "{C5E9FD78-A530-481B-AAE7-12A96BCA2229}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snake_Universal", "Snake_Universal\Snake_Universal.csproj", "{00A2E746-8940-4C9F-B69A-B35562DE10F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{EEC2416F-9BCC-4DDE-A9A0-CBE1CC4EB0AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5E9FD78-A530-481B-AAE7-12A96BCA2229}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{C5E9FD78-A530-481B-AAE7-12A96BCA2229}.Debug|anycpu.Build.0 = Debug|anycpu
+		{C5E9FD78-A530-481B-AAE7-12A96BCA2229}.Release|anycpu.ActiveCfg = Release|anycpu
+		{C5E9FD78-A530-481B-AAE7-12A96BCA2229}.Release|anycpu.Build.0 = Release|anycpu
+		{00A2E746-8940-4C9F-B69A-B35562DE10F6}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{00A2E746-8940-4C9F-B69A-B35562DE10F6}.Debug|anycpu.Build.0 = Debug|anycpu
+		{00A2E746-8940-4C9F-B69A-B35562DE10F6}.Release|anycpu.ActiveCfg = Release|anycpu
+		{00A2E746-8940-4C9F-B69A-B35562DE10F6}.Release|anycpu.Build.0 = Release|anycpu
+		{EEC2416F-9BCC-4DDE-A9A0-CBE1CC4EB0AF}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{EEC2416F-9BCC-4DDE-A9A0-CBE1CC4EB0AF}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{EEC2416F-9BCC-4DDE-A9A0-CBE1CC4EB0AF}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{EEC2416F-9BCC-4DDE-A9A0-CBE1CC4EB0AF}.Release|anycpu.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
