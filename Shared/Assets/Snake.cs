@@ -17,8 +17,8 @@ namespace Shared
 
         public Snake(/*ContentManager Content*/)
         {
-            //texture = Content.Load<Texture2D>("Snake_10_10");
-            this.texture = Tools.CreateColorTexture(Color.Red);
+            //this.texture = Tools.CreateColorTexture(Color.Red);
+            this.texture = Tools.GetImageFromPipeline("Snake_10_10");
             SnakeTools.AddBody(new Vector2(10, 10), "r", bodies, texture);
             SnakeTools.AddBody(new Vector2(20, 10), "r", bodies, texture);
             SnakeTools.AddBody(new Vector2(30, 10), "r", bodies, texture);

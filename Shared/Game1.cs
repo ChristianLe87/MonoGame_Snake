@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -11,6 +12,7 @@ namespace Shared
     {
         public static GraphicsDeviceManager graphicsDeviceManager;
         SpriteBatch spriteBatch;
+        public static ContentManager contentManager;
 
         int Width = 300;
         int Height = 300;
@@ -23,7 +25,9 @@ namespace Shared
             graphicsDeviceManager = new GraphicsDeviceManager(this);
             string localPath = "../../../../MonoGame_Snake/Content/bin/";
             DirectoryInfo directory = new DirectoryInfo(Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, localPath)));
-            Content.RootDirectory = directory.ToString();
+
+            contentManager = this.Content;
+            contentManager.RootDirectory = directory.ToString();
 
             graphicsDeviceManager.PreferredBackBufferWidth = Width;
             graphicsDeviceManager.PreferredBackBufferHeight = Height;
@@ -52,7 +56,7 @@ namespace Shared
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            if(isMouseVisible == true)
+            if (isMouseVisible == true)
                 IsMouseVisible = true;
             else
                 IsMouseVisible = false;
@@ -77,3 +81,4 @@ namespace Shared
 
     }
 }
+    

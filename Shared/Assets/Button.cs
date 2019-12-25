@@ -12,6 +12,7 @@ namespace Shared
         Texture2D mouseOverTexture;
         MouseState previousMouseState;
         bool isMouseOver = false;
+        Text text;
 
         public delegate void DxOnClickAction();
 
@@ -20,11 +21,14 @@ namespace Shared
             this.rectangle = rectangle;
             this.defaultTexture = Tools.CreateColorTexture(defaultColor);
             this.mouseOverTexture = Tools.CreateColorTexture(mouseOverColor);
+            this.text = new Text("MyFont", new Vector2(rectangle.X, rectangle.Y));
         }
 
-        public void Update(DxOnClickAction OnClickAction)
+        public void Update(DxOnClickAction OnClickAction, string text)
         {
             MouseState mouseState = Mouse.GetState();
+
+            this.text.Update(text);
 
             if (rectangle.Contains(mouseState.X, mouseState.Y))
             {
@@ -47,10 +51,15 @@ namespace Shared
 
         public void Draw(SpriteBatch spriteBatch)
         {
+
             if (isMouseOver)
                 spriteBatch.Draw(mouseOverTexture, rectangle, Color.White);
             else
                 spriteBatch.Draw(defaultTexture, rectangle, Color.White);
+
+
+            this.text.Draw(spriteBatch);
+
         }
     }
 }

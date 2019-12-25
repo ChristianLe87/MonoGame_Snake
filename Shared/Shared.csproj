@@ -50,6 +50,7 @@
     <Compile Include="Assets\Button.cs" />
     <Compile Include="Scenes\Menu.cs" />
     <Compile Include="Scenes\Level_1.cs" />
+    <Compile Include="Text.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

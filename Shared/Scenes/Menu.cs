@@ -19,8 +19,8 @@ namespace Shared
 
         public void Update()
         {
-            PlayButton.Update(PlayButtonLogic);
-            AboutButton.Update(AboutButtonLogic);
+            PlayButton.Update(PlayButtonLogic, "Play");
+            AboutButton.Update(AboutButtonLogic, "About");
         }
 
         public void Draw(SpriteBatch spriteBatch)
