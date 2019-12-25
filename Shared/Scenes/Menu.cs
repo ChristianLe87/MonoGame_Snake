@@ -45,6 +45,7 @@ namespace Shared
         public void AboutButtonLogic()
         {
             Console.WriteLine("About");
+            Game1.actualScene = new About();
         }
 
 

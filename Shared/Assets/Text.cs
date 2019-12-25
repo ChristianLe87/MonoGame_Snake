@@ -8,7 +8,7 @@ namespace Shared
     public class Text
     {
         Vector2 position;
-        string text;
+        string text = "";
         SpriteFont spriteFont;
 
 
