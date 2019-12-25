@@ -8,14 +8,22 @@ namespace Shared
 {
     internal static class Tools
     {
-        public static void AddBody(Vector2 position, string direction, List<Body> bodies, Texture2D texture)
+        public static Texture2D CreateColorTexture(Color color)
         {
-            Body body = new Body(position, texture, direction);
-            bodies.Add(body);
+            Texture2D newTexture = new Texture2D(Game1.graphicsDeviceManager.GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
+            newTexture.SetData(new Color[] { color });
+            return newTexture;
         }
 
 
-        public static Vector2 CalculateNextPosition(Vector2 oldPosition, string direction)
+        /*public static void AddBody(Vector2 position, string direction, List<Body> bodies, Texture2D texture)
+        {
+            Body body = new Body(position, texture, direction);
+            bodies.Add(body);
+        }*/
+
+
+        /*public static Vector2 CalculateNextPosition(Vector2 oldPosition, string direction)
         {
             float x = oldPosition.X;
             float y = oldPosition.Y;
@@ -30,10 +38,10 @@ namespace Shared
                 x -= 10;
 
             return new Vector2(x, y);
-        }
+        }*/
 
 
-        public static void MoveTaleToHead(List<Body> bodies, Texture2D texture)
+        /*public static void MoveTaleToHead(List<Body> bodies, Texture2D texture)
         {
             // insert first element that at the end of the list
             Body head = bodies[bodies.Count - 1];
@@ -43,10 +51,10 @@ namespace Shared
 
             // delete body[0]
             bodies.RemoveAt(0);
-        }
+        }*/
 
 
-        public static void UpdateDirection(KeyboardState keyboard, List<Body> bodies)
+        /*public static void UpdateDirection(KeyboardState keyboard, List<Body> bodies)
         {
             foreach (var i in bodies)
             {
@@ -59,6 +67,6 @@ namespace Shared
                 else if (keyboard.IsKeyDown(Keys.Down) && i.direction != "u")
                     i.direction = "d";
             }
-        }
+        }*/
     }
 }

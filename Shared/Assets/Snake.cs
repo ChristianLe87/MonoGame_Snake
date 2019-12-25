@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Shared
 {
-    public class Snake
+    /*public class Snake
     {
         Texture2D texture;
         List<Body> bodies = new List<Body>();
@@ -124,5 +124,5 @@ namespace Shared
             this.direction = direction;
             this.rectangle = new Rectangle((int)vector2.X, (int)vector2.Y, texture2D.Width, texture2D.Height);
         }
-    }
+    }*/
 }

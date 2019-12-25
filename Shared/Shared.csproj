@@ -40,16 +40,25 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Coin.cs" />
-    <Compile Include="GameOver.cs" />
-    <Compile Include="Score.cs" />
-    <Compile Include="Snake.cs" />
-    <Compile Include="DB.cs" />
-    <Compile Include="Tools.cs" />
+    <Compile Include="Tools\Tools.cs" />
+    <Compile Include="Assets\Coin.cs" />
+    <Compile Include="Assets\Snake.cs" />
+    <Compile Include="Assets\Score.cs" />
+    <Compile Include="Assets\GameOver.cs" />
+    <Compile Include="Tools\DB.cs" />
+    <Compile Include="Level_1.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="Tools\IScene.cs" />
+    <Compile Include="Assets\Button.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tools\" />
+    <Folder Include="Assets\" />
+    <Folder Include="Scenes\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
