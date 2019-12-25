@@ -7,7 +7,7 @@ namespace Shared
 {
     public class Score
     {
-        SpriteFont spriteFont;
+        /*SpriteFont spriteFont;
         Vector2 position;
         int score = 0;
 
@@ -37,6 +37,6 @@ namespace Shared
         public void ResetScore()
         {
             score = 0;
-        }
+        }*/
     }
 }

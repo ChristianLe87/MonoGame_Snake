@@ -7,7 +7,7 @@ namespace Shared
 {
     public class DB
     {
-        string tableName;
+        /*string tableName;
         SqliteConnection connection;
 
         public DB(string fileName, string tableName)
@@ -62,6 +62,6 @@ namespace Shared
 
             connection.Close();
         }
-
+        */
     }
 }

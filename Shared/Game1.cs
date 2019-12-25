@@ -18,8 +18,6 @@ namespace Shared
         public static bool isMouseVisible = false;
         public static IScene actualScene;
 
-        
-
         public Game1()
         {
             graphicsDeviceManager = new GraphicsDeviceManager(this);
@@ -42,8 +40,7 @@ namespace Shared
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            //actualScene = new Menu();
-            actualScene = new Level_1();
+            actualScene = new Menu();
         }
 
 

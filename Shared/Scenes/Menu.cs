@@ -39,6 +39,7 @@ namespace Shared
         public void PlayButtonLogic()
         {
             Console.WriteLine("Play");
+            Game1.actualScene = new Level_1();
         }
 
         public void AboutButtonLogic()

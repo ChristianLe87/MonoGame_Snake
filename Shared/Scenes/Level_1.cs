@@ -5,18 +5,21 @@ namespace Shared
 {
     public class Level_1 : IScene
     {
+        Snake snake;
+
         public Level_1()
         {
+            this.snake = new Snake();
         }
 
         public void Update()
         {
-            throw new NotImplementedException();
+            snake.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            throw new NotImplementedException();
+            snake.Draw(spriteBatch);
         }
     }
 }

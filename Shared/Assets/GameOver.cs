@@ -7,7 +7,7 @@ namespace Shared
 {
     public class GameOver
     {
-        SpriteFont spriteFont;
+        /*SpriteFont spriteFont;
         Vector2 position;
 
         public GameOver(ContentManager Content, Vector2 position)
@@ -19,6 +19,6 @@ namespace Shared
         public void Draw(SpriteBatch spriteBatch, int topScore)
         {
             spriteBatch.DrawString(spriteFont, $"TopScore: {topScore}\nGame Over\n'p' to restart", position, Color.White);
-        }
+        }*/
     }
 }

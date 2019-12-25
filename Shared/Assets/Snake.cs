@@ -8,36 +8,40 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Shared
 {
-    /*public class Snake
+    public class Snake
     {
         Texture2D texture;
         List<Body> bodies = new List<Body>();
         int frameCount = 0;
 
 
-        public Snake(ContentManager Content)
+        public Snake(/*ContentManager Content*/)
         {
-            texture = Content.Load<Texture2D>("Snake_10_10");
-
-            Tools.AddBody(new Vector2(10, 10), "r", bodies, texture);
-            Tools.AddBody(new Vector2(20, 10), "r", bodies, texture);
-            Tools.AddBody(new Vector2(30, 10), "r", bodies, texture);
-            Tools.AddBody(new Vector2(40, 10), "r", bodies, texture);
+            //texture = Content.Load<Texture2D>("Snake_10_10");
+            this.texture = Tools.CreateColorTexture(Color.Red);
+            SnakeTools.AddBody(new Vector2(10, 10), "r", bodies, texture);
+            SnakeTools.AddBody(new Vector2(20, 10), "r", bodies, texture);
+            SnakeTools.AddBody(new Vector2(30, 10), "r", bodies, texture);
+            SnakeTools.AddBody(new Vector2(40, 10), "r", bodies, texture);
         }
 
 
-        public void Update(KeyboardState keyboard)
+        public void Update(/*KeyboardState keyboard*/)
         {
+
+            KeyboardState keyboardState = Keyboard.GetState();
+
+
             frameCount++;
 
             // player control move
-            Tools.UpdateDirection(keyboard, bodies);
+            SnakeTools.UpdateDirection(keyboardState, bodies);
 
 
             // each 5 frames, move snake
             if (frameCount > 5)
             {
-                Tools.MoveTaleToHead(bodies, texture);
+                SnakeTools.MoveTaleToHead(bodies, texture);
                 frameCount = 0;
             }
         }
@@ -94,18 +98,71 @@ namespace Shared
 
         internal void AddBody()
         {
-            Tools.AddBody(Tools.CalculateNextPosition(bodies[bodies.Count - 1].position, bodies[bodies.Count - 1].direction), bodies[bodies.Count - 1].direction, bodies, texture);
-            Tools.AddBody(Tools.CalculateNextPosition(bodies[bodies.Count - 1].position, bodies[bodies.Count - 1].direction), bodies[bodies.Count - 1].direction, bodies, texture);
-            Tools.AddBody(Tools.CalculateNextPosition(bodies[bodies.Count - 1].position, bodies[bodies.Count - 1].direction), bodies[bodies.Count - 1].direction, bodies, texture);
+            SnakeTools.AddBody(SnakeTools.CalculateNextPosition(bodies[bodies.Count - 1].position, bodies[bodies.Count - 1].direction), bodies[bodies.Count - 1].direction, bodies, texture);
+            SnakeTools.AddBody(SnakeTools.CalculateNextPosition(bodies[bodies.Count - 1].position, bodies[bodies.Count - 1].direction), bodies[bodies.Count - 1].direction, bodies, texture);
+            SnakeTools.AddBody(SnakeTools.CalculateNextPosition(bodies[bodies.Count - 1].position, bodies[bodies.Count - 1].direction), bodies[bodies.Count - 1].direction, bodies, texture);
         }
 
         internal void Reset()
         {
             bodies = new List<Body>() { };
-            Tools.AddBody(new Vector2(10, 10), "r", bodies, texture);
-            Tools.AddBody(new Vector2(20, 10), "r", bodies, texture);
-            Tools.AddBody(new Vector2(30, 10), "r", bodies, texture);
-            Tools.AddBody(new Vector2(40, 10), "r", bodies, texture);
+            SnakeTools.AddBody(new Vector2(10, 10), "r", bodies, texture);
+            SnakeTools.AddBody(new Vector2(20, 10), "r", bodies, texture);
+            SnakeTools.AddBody(new Vector2(30, 10), "r", bodies, texture);
+            SnakeTools.AddBody(new Vector2(40, 10), "r", bodies, texture);
+        }
+    }
+
+    internal class SnakeTools
+    {
+        public static void AddBody(Vector2 position, string direction, List<Body> bodies, Texture2D texture)
+        {
+            Body body = new Body(position, texture, direction);
+            bodies.Add(body);
+        }
+
+        public static void UpdateDirection(KeyboardState keyboard, List<Body> bodies)
+        {
+            foreach (var i in bodies)
+            {
+                if (keyboard.IsKeyDown(Keys.Left) && i.direction != "r")
+                    i.direction = "l";
+                else if (keyboard.IsKeyDown(Keys.Right) && i.direction != "l")
+                    i.direction = "r";
+                else if (keyboard.IsKeyDown(Keys.Up) && i.direction != "d")
+                    i.direction = "u";
+                else if (keyboard.IsKeyDown(Keys.Down) && i.direction != "u")
+                    i.direction = "d";
+            }
+        }
+
+        public static void MoveTaleToHead(List<Body> bodies, Texture2D texture)
+        {
+            // insert first element that at the end of the list
+            Body head = bodies[bodies.Count - 1];
+            Vector2 headNextPosition = SnakeTools.CalculateNextPosition(new Vector2(head.position.X, head.position.Y), head.direction);
+            Body newElement = new Body(headNextPosition, texture, head.direction);
+            bodies.Add(newElement);
+
+            // delete body[0]
+            bodies.RemoveAt(0);
+        }
+
+        public static Vector2 CalculateNextPosition(Vector2 oldPosition, string direction)
+        {
+            float x = oldPosition.X;
+            float y = oldPosition.Y;
+
+            if (direction == "u")
+                y -= 10;
+            else if (direction == "d")
+                y += 10;
+            else if (direction == "r")
+                x += 10;
+            else if (direction == "l")
+                x -= 10;
+
+            return new Vector2(x, y);
         }
     }
 
@@ -122,7 +179,7 @@ namespace Shared
             this.position = vector2;
             this.texture2D = texture2D;
             this.direction = direction;
-            this.rectangle = new Rectangle((int)vector2.X, (int)vector2.Y, texture2D.Width, texture2D.Height);
+            this.rectangle = new Rectangle((int)vector2.X, (int)vector2.Y, /*texture2D.Width*/10, /*texture2D.Height*/10);
         }
-    }*/
+    }
 }

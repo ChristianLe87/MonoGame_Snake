@@ -46,10 +46,10 @@
     <Compile Include="Assets\Score.cs" />
     <Compile Include="Assets\GameOver.cs" />
     <Compile Include="Tools\DB.cs" />
-    <Compile Include="Level_1.cs" />
-    <Compile Include="Menu.cs" />
     <Compile Include="Tools\IScene.cs" />
     <Compile Include="Assets\Button.cs" />
+    <Compile Include="Scenes\Menu.cs" />
+    <Compile Include="Scenes\Level_1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

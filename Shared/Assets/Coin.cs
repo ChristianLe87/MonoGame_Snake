@@ -7,7 +7,7 @@ namespace Shared
 {
     public class Coin
     {
-        Texture2D texture;
+        /*Texture2D texture;
         Rectangle rectangle;
         Vector2 position;
 
@@ -33,6 +33,6 @@ namespace Shared
         {
             this.position = position;
             rectangle = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
-        }
+        }*/
     }
 }
