@@ -12,7 +12,6 @@ namespace Shared
         public List<Body> bodies = new List<Body>();
         int frameCount = 0;
 
-
         public Snake()
         {
             this.texture = Tools.GetImageFromPipeline("Snake_10_10");
@@ -26,43 +25,36 @@ namespace Shared
         public void Update()
         {
 
-            KeyboardState keyboardState = Keyboard.GetState();
-
-
-            frameCount++;
-
-            // player control move
-            SnakeTools.UpdateDirection(keyboardState, bodies);
-
-
-            // each 5 frames, move snake
-            if (frameCount > 5)
+            if (IsInsideGame() == true && GetIfColideItself() == true)
             {
-                SnakeTools.MoveTaleToHead(bodies, texture);
-                frameCount = 0;
+                KeyboardState keyboardState = Keyboard.GetState();
+
+
+                frameCount++;
+
+                // player control move
+                SnakeTools.UpdateDirection(keyboardState, bodies);
+
+
+                // each 5 frames, move snake
+                if (frameCount > 5)
+                {
+                    SnakeTools.MoveTaleToHead(bodies, texture);
+                    frameCount = 0;
+                }
+
+                // check if snake get coin
+                if (GetHeadRectangle().Intersects(Level_1.coin.GetRectangle()))
+                {
+                    Level_1.coin.ChangePosition();
+                    AddBody();
+                    Level_1.scoreVal++;
+                }
             }
-
-
-
-            if(IsInsideGame() == false)
+            else
             {
-                var bla = 0;
+                Level_1.isGameOver = true;
             }
-
-
-            // check if snake get coin
-            if (GetHeadRectangle().Intersects(Level_1.coin.GetRectangle()))
-            {
-                Level_1.coin.ChangePosition();
-                AddBody();
-                Level_1.scoreVal++;
-            }
-
-            if(GetIfColideItself() == false)
-            {
-                var bla = 0;
-            }
-
         }
 
 
@@ -88,6 +80,9 @@ namespace Shared
             {
                 spriteBatch.Draw(i.texture2D, i.rectangle, Color.White);
             }
+
+
+         
         }
 
 

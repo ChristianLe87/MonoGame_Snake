@@ -7,18 +7,25 @@ namespace Shared
 {
     public class GameOver
     {
-        /*SpriteFont spriteFont;
-        Vector2 position;
+        Texture2D texture;
+        Rectangle rectangle;
+        Text text;
 
-        public GameOver(ContentManager Content, Vector2 position)
+        public GameOver(Rectangle rectangle)
         {
-            spriteFont = Content.Load<SpriteFont>("MyFont");
-            this.position = position;
+            this.texture = Tools.CreateColorTexture(Color.Green);
+            this.text = new Text("MyFont", new Vector2(100, 100));
+            this.rectangle = rectangle;
+
         }
 
         public void Draw(SpriteBatch spriteBatch, int topScore)
         {
-            spriteBatch.DrawString(spriteFont, $"TopScore: {topScore}\nGame Over\n'p' to restart", position, Color.White);
-        }*/
+            text.Update($"Game Over\n'p' to restart\n\nTopScore: {topScore}");
+
+            spriteBatch.Draw(texture, rectangle, Color.White);
+            text.Draw(spriteBatch, Color.White);
+            //spriteBatch.DrawString(texture, , position, Color.White);
+        }
     }
 }
