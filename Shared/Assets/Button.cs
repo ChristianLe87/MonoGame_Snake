@@ -58,7 +58,7 @@ namespace Shared
                 spriteBatch.Draw(defaultTexture, rectangle, Color.White);
 
 
-            this.text.Draw(spriteBatch);
+            this.text.Draw(spriteBatch, Color.Black);
 
         }
     }

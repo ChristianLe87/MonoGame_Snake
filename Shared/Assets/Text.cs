@@ -23,9 +23,9 @@ namespace Shared
             this.text = text;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Color color)
         {
-            spriteBatch.DrawString(spriteFont, text, position, Color.Black);
+            spriteBatch.DrawString(spriteFont, text, position, color);
         }
     }
 }

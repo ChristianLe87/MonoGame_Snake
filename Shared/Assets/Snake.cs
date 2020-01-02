@@ -55,6 +55,7 @@ namespace Shared
             {
                 Level_1.coin.ChangePosition();
                 AddBody();
+                Level_1.scoreVal++;
             }
 
             if(GetIfColideItself() == false)
