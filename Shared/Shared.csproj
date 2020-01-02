@@ -45,7 +45,6 @@
     <Compile Include="Assets\Snake.cs" />
     <Compile Include="Assets\Score.cs" />
     <Compile Include="Assets\GameOver.cs" />
-    <Compile Include="Tools\DB.cs" />
     <Compile Include="Tools\IScene.cs" />
     <Compile Include="Assets\Button.cs" />
     <Compile Include="Scenes\Menu.cs" />

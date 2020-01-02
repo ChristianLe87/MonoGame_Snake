@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -11,13 +9,12 @@ namespace Shared
     public class Snake
     {
         Texture2D texture;
-        List<Body> bodies = new List<Body>();
+        public List<Body> bodies = new List<Body>();
         int frameCount = 0;
 
 
-        public Snake(/*ContentManager Content*/)
+        public Snake()
         {
-            //this.texture = Tools.CreateColorTexture(Color.Red);
             this.texture = Tools.GetImageFromPipeline("Snake_10_10");
             SnakeTools.AddBody(new Vector2(10, 10), "r", bodies, texture);
             SnakeTools.AddBody(new Vector2(20, 10), "r", bodies, texture);
@@ -26,7 +23,7 @@ namespace Shared
         }
 
 
-        public void Update(/*KeyboardState keyboard*/)
+        public void Update()
         {
 
             KeyboardState keyboardState = Keyboard.GetState();
@@ -44,6 +41,27 @@ namespace Shared
                 SnakeTools.MoveTaleToHead(bodies, texture);
                 frameCount = 0;
             }
+
+
+
+            if(IsInsideGame() == false)
+            {
+                var bla = 0;
+            }
+
+
+            // check if snake get coin
+            if (GetHeadRectangle().Intersects(Level_1.coin.GetRectangle()))
+            {
+                Level_1.coin.ChangePosition();
+                AddBody();
+            }
+
+            if(GetIfColideItself() == false)
+            {
+                var bla = 0;
+            }
+
         }
 
 
@@ -72,7 +90,7 @@ namespace Shared
         }
 
 
-        public Rectangle GetHeadRectangle()
+       public Rectangle GetHeadRectangle()
         {
             return bodies[bodies.Count - 1].rectangle;
         }
@@ -96,20 +114,11 @@ namespace Shared
             }
         }
 
-        internal void AddBody()
+        public void AddBody()
         {
             SnakeTools.AddBody(SnakeTools.CalculateNextPosition(bodies[bodies.Count - 1].position, bodies[bodies.Count - 1].direction), bodies[bodies.Count - 1].direction, bodies, texture);
             SnakeTools.AddBody(SnakeTools.CalculateNextPosition(bodies[bodies.Count - 1].position, bodies[bodies.Count - 1].direction), bodies[bodies.Count - 1].direction, bodies, texture);
             SnakeTools.AddBody(SnakeTools.CalculateNextPosition(bodies[bodies.Count - 1].position, bodies[bodies.Count - 1].direction), bodies[bodies.Count - 1].direction, bodies, texture);
-        }
-
-        internal void Reset()
-        {
-            bodies = new List<Body>() { };
-            SnakeTools.AddBody(new Vector2(10, 10), "r", bodies, texture);
-            SnakeTools.AddBody(new Vector2(20, 10), "r", bodies, texture);
-            SnakeTools.AddBody(new Vector2(30, 10), "r", bodies, texture);
-            SnakeTools.AddBody(new Vector2(40, 10), "r", bodies, texture);
         }
     }
 
@@ -167,7 +176,7 @@ namespace Shared
     }
 
 
-    internal class Body
+    public class Body
     {
         public Rectangle rectangle { get; set; }
         public Vector2 position { get; set; }
