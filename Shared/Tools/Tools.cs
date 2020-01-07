@@ -16,7 +16,7 @@ namespace Shared
             return newTexture;
         }
 
-        public static Texture2D GetImageFromPipeline3(string assetName)
+        public static Texture2D GetImageFromPipeline(string assetName)
         {
             return Game1.contentManager.Load<Texture2D>(assetName);
         }

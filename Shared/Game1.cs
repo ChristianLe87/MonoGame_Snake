@@ -44,8 +44,7 @@ namespace Shared
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            //actualScene = new Menu();
-            actualScene = new Level_1();
+            actualScene = new _0_Intro();
         }
 
 

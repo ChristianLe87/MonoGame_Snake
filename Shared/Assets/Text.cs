@@ -12,10 +12,10 @@ namespace Shared
         SpriteFont spriteFont;
 
 
-        public Text(string assetName, Vector2 position)
+        public Text(string assetName, Vector2 position, string text = "")
         {
             this.position = position;
-            this.text = "";
+            this.text = text;
             this.spriteFont = Game1.contentManager.Load<SpriteFont>(assetName);
         }
 

@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Shared
 {
-    public class Level_1 : IScene
+    public class _3_Level_1 : IScene
     {
         Snake snake;
         public static Coin coin;
@@ -14,7 +14,7 @@ namespace Shared
         GameOver gameOver;
 
 
-        public Level_1()
+        public _3_Level_1()
         {
             this.snake = new Snake();
             coin = new Coin();
@@ -30,7 +30,7 @@ namespace Shared
             KeyboardState keyboardState = Keyboard.GetState();
             if (keyboardState.IsKeyDown(Keys.P) && isGameOver)
             {
-                Game1.actualScene = new Menu();
+                Game1.actualScene = new _1_Menu();
             }
 
             snake.Update();

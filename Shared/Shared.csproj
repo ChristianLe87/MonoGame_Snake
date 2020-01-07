@@ -47,11 +47,12 @@
     <Compile Include="Assets\GameOver.cs" />
     <Compile Include="Tools\IScene.cs" />
     <Compile Include="Assets\Button.cs" />
-    <Compile Include="Scenes\Menu.cs" />
-    <Compile Include="Scenes\Level_1.cs" />
-    <Compile Include="Scenes\About.cs" />
+    <Compile Include="Scenes\_1_Menu.cs" />
+    <Compile Include="Scenes\_3_Level_1.cs" />
+    <Compile Include="Scenes\_2_About.cs" />
     <Compile Include="Assets\Text.cs" />
     <Compile Include="Tools\WK.cs" />
+    <Compile Include="Scenes\_0_Intro.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -49,16 +49,16 @@ namespace Shared
                 }
 
                 // check if snake get coin
-                if (GetHeadRectangle().Intersects(Level_1.coin.GetRectangle()))
+                if (GetHeadRectangle().Intersects(_3_Level_1.coin.GetRectangle()))
                 {
-                    Level_1.coin.ChangePosition();
+                    _3_Level_1.coin.ChangePosition();
                     AddBody();
-                    Level_1.scoreVal++;
+                    _3_Level_1.scoreVal++;
                 }
             }
             else
             {
-                Level_1.isGameOver = true;
+                _3_Level_1.isGameOver = true;
             }
         }
 
@@ -87,11 +87,11 @@ namespace Shared
             }
 
 
-         
+
         }
 
 
-       public Rectangle GetHeadRectangle()
+        public Rectangle GetHeadRectangle()
         {
             return bodies[bodies.Count - 1].rectangle;
         }

@@ -4,13 +4,13 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class Menu: IScene
+    public class _1_Menu: IScene
     {
 
         Button PlayButton;
         Button AboutButton;
 
-        public Menu()
+        public _1_Menu()
         {
             this.PlayButton = new Button(new Rectangle(50, 50, 200, 50), Color.Pink, Color.Gray);
             this.AboutButton = new Button(new Rectangle(50, 150, 200, 50), Color.Yellow, Color.Gray);
@@ -32,20 +32,20 @@ namespace Shared
         
         public void ChangeScene()
         {
-            Game1.actualScene = new Level_1();
+            Game1.actualScene = new _3_Level_1();
         }
 
 
         public void PlayButtonLogic()
         {
             Console.WriteLine("Play");
-            Game1.actualScene = new Level_1();
+            Game1.actualScene = new _3_Level_1();
         }
 
         public void AboutButtonLogic()
         {
             Console.WriteLine("About");
-            Game1.actualScene = new About();
+            Game1.actualScene = new _2_About();
         }
 
 
