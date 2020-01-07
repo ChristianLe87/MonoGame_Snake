@@ -11,7 +11,11 @@ namespace Shared
 
         public _2_About()
         {
-            string aboutText = "Game inspired by the Snake Game\nI coded to keep my C# sckils on shape\n\nI need a designer...";
+            string aboutText =
+                "Game inspired by the Snake Game\n" +
+                "I coded to keep my C# sckils on shape\n" +
+                "Created using MonoGame\n\n" +
+                "I need a designer...";
             this.text = new Text(WK.Font.MyFont, new Vector2(20, 50), aboutText);
             this.toMenu = new Button(new Rectangle(50, 200, 150, 50), Color.LightBlue, Color.Gray);
         }
