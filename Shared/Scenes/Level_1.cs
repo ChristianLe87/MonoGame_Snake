@@ -18,9 +18,8 @@ namespace Shared
         {
             this.snake = new Snake();
             coin = new Coin();
-            textScore = new Text("MyFont", new Vector2(0, 0));
+            textScore = new Text(WK.Font.MyFont, new Vector2(0, 0));
             gameOver = new GameOver(new Rectangle(0, 0, 300, 300));
-
         }
 
         public void Update()
@@ -32,11 +31,8 @@ namespace Shared
                 Game1.actualScene = new Menu();
             }
 
-
             snake.Update();
             textScore.Update($"Score: {scoreVal}");
-
-
         }
 
         public void Draw(SpriteBatch spriteBatch)

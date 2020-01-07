@@ -13,10 +13,15 @@ namespace Shared
 
         public GameOver(Rectangle rectangle)
         {
-            this.texture = Tools.CreateColorTexture(Color.Green);
-            this.text = new Text("MyFont", new Vector2(100, 100));
+            this.texture = Tools.CreateColorTexture(new Color(Color.Green,255));
+            this.text = new Text(WK.Font.MyFont, new Vector2(100, 100));
             this.rectangle = rectangle;
 
+        }
+
+        public void Update()
+        {
+            //texture.
         }
 
         public void Draw(SpriteBatch spriteBatch, int topScore)

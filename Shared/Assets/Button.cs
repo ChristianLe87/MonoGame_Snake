@@ -21,7 +21,7 @@ namespace Shared
             this.rectangle = rectangle;
             this.defaultTexture = Tools.CreateColorTexture(defaultColor);
             this.mouseOverTexture = Tools.CreateColorTexture(mouseOverColor);
-            this.text = new Text("MyFont", new Vector2(rectangle.X, rectangle.Y));
+            this.text = new Text(WK.Font.MyFont, new Vector2(rectangle.X, rectangle.Y));
         }
 
         public void Update(DxOnClickAction OnClickAction, string text)

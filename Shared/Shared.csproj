@@ -51,6 +51,7 @@
     <Compile Include="Scenes\Level_1.cs" />
     <Compile Include="Scenes\About.cs" />
     <Compile Include="Assets\Text.cs" />
+    <Compile Include="Tools\WK.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
