@@ -7,6 +7,7 @@ namespace Shared
     public class About : IScene
     {
         Button toMenu;
+
         public About()
         {
             this.toMenu = new Button(new Rectangle(50, 200, 100, 50), Color.LightBlue, Color.Gray);

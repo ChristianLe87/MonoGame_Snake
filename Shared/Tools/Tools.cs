@@ -16,23 +16,9 @@ namespace Shared
             return newTexture;
         }
 
-        internal static Texture2D GetImageTexture(string imageName)
-        {
-            string relativePath = $"../../../../MonoGame_SpaceInvaders/Content/bin/{imageName}.png"; //Bullet_40x80.png
-            string absolutePath = new DirectoryInfo(Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, relativePath))).ToString();
-
-            FileStream fileStream = new FileStream(absolutePath, FileMode.Open);
-
-            var result = Texture2D.FromStream(Game1.graphicsDeviceManager.GraphicsDevice, fileStream);
-            fileStream.Dispose();
-
-            return result;
-        }
-
-        public static Texture2D GetImageFromPipeline(string assetName)
+        public static Texture2D GetImageFromPipeline3(string assetName)
         {
             return Game1.contentManager.Load<Texture2D>(assetName);
         }
-
     }
 }

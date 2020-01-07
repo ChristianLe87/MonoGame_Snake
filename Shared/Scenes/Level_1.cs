@@ -9,8 +9,8 @@ namespace Shared
         Snake snake;
         public static Coin coin;
         Text textScore;
-        public static int scoreVal = 0;
-        public static bool isGameOver = false;
+        public static int scoreVal;
+        public static bool isGameOver;
         GameOver gameOver;
 
 
@@ -19,6 +19,8 @@ namespace Shared
             this.snake = new Snake();
             coin = new Coin();
             textScore = new Text(WK.Font.MyFont, new Vector2(0, 0));
+            scoreVal = 0;
+            isGameOver = false;
             gameOver = new GameOver(new Rectangle(0, 0, 300, 300));
         }
 
@@ -47,5 +49,6 @@ namespace Shared
                 gameOver.Draw(spriteBatch, scoreVal);
             }
         }
+
     }
 }

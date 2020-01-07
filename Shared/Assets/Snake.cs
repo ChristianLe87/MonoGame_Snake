@@ -9,16 +9,21 @@ namespace Shared
     public class Snake
     {
         Texture2D texture;
-        public List<Body> bodies = new List<Body>();
-        int frameCount = 0;
+        public List<Body> bodies;
+        int frameCount;
 
         public Snake()
         {
-            this.texture = Tools.GetImageFromPipeline("Snake_10_10");
+            this.texture = Tools.CreateColorTexture(Color.White);
+
+            bodies = new List<Body>();
+
             SnakeTools.AddBody(new Vector2(10, 10), "r", bodies, texture);
             SnakeTools.AddBody(new Vector2(20, 10), "r", bodies, texture);
             SnakeTools.AddBody(new Vector2(30, 10), "r", bodies, texture);
             SnakeTools.AddBody(new Vector2(40, 10), "r", bodies, texture);
+
+            this.frameCount = 0;
         }
 
 

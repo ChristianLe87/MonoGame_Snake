@@ -8,14 +8,15 @@ namespace Shared
     public class Text
     {
         Vector2 position;
-        string text = "";
+        string text;
         SpriteFont spriteFont;
 
 
         public Text(string assetName, Vector2 position)
         {
-            this.spriteFont = Game1.contentManager.Load<SpriteFont>(assetName);
             this.position = position;
+            this.text = "";
+            this.spriteFont = Game1.contentManager.Load<SpriteFont>(assetName);
         }
 
         public void Update(string text)

@@ -13,14 +13,14 @@ namespace Shared
 
         public Coin()
         {
-            texture = Tools.GetImageFromPipeline("Snake_10_10");
+            texture = Tools.CreateColorTexture(Color.White);
 
             Random random = new Random();
             int pos_x = random.Next(30) * 10;
             int pos_y = random.Next(30) * 10;
 
             this.position = new Vector2(pos_x,pos_y);
-            rectangle = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
+            rectangle = new Rectangle((int)position.X, (int)position.Y, 10, 10);
         }
 
         public Rectangle GetRectangle()
@@ -42,7 +42,7 @@ namespace Shared
 
             this.position = new Vector2(pos_x, pos_y);
 
-            rectangle = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
+            rectangle = new Rectangle((int)position.X, (int)position.Y, 10, 10);
         }
     }
 }
