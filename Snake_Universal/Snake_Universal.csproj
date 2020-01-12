@@ -28,6 +28,10 @@
     <ExternalConsole>true</ExternalConsole>
     <IntermediateOutputPath>obj\anycpu\Release</IntermediateOutputPath>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <StartAction>Project</StartAction>
+    <ExternalConsole>false</ExternalConsole>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="MonoGame.Framework">

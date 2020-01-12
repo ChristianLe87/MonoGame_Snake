@@ -11,14 +11,12 @@ namespace Shared
 
         long startTime;
 
-        Text title;
 
         public _0_Intro()
         {
             this.rectangle = new Rectangle(0, 0, 300, 300);
-            this.texture = Tools.CreateColorTexture(Color.Black);
+            this.texture = Tools.GetImageFromPipeline(WK.Image._0_Intro);
             this.startTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-            this.title = new Text(WK.Font.MyFont, new Vector2(100, 100), "Amazing Snake");
         }
 
         public void Update()
@@ -32,7 +30,6 @@ namespace Shared
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, rectangle, Color.White);
-            title.Draw(spriteBatch, Color.White);
         }
 
     }

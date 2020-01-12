@@ -11,24 +11,30 @@ namespace Shared
         Texture2D defaultTexture;
         Texture2D mouseOverTexture;
         MouseState previousMouseState;
-        bool isMouseOver = false;
-        Text text;
+        bool isMouseOver;
 
         public delegate void DxOnClickAction();
+
+        public Button(Rectangle rectangle, string defaultImage, string mouseOverImage)
+        {
+            this.rectangle = rectangle;
+            this.defaultTexture = Tools.GetImageFromPipeline(defaultImage);
+            this.mouseOverTexture = Tools.GetImageFromPipeline(mouseOverImage);
+            this.isMouseOver = false;
+        }
 
         public Button(Rectangle rectangle, Color defaultColor, Color mouseOverColor)
         {
             this.rectangle = rectangle;
             this.defaultTexture = Tools.CreateColorTexture(defaultColor);
             this.mouseOverTexture = Tools.CreateColorTexture(mouseOverColor);
-            this.text = new Text(WK.Font.MyFont, new Vector2(rectangle.X, rectangle.Y));
+            this.isMouseOver = false;
         }
 
-        public void Update(DxOnClickAction OnClickAction, string text)
+        public void Update(DxOnClickAction OnClickAction)
         {
             MouseState mouseState = Mouse.GetState();
 
-            this.text.Update(text);
 
             if (rectangle.Contains(mouseState.X, mouseState.Y))
             {
@@ -51,15 +57,10 @@ namespace Shared
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
             if (isMouseOver)
                 spriteBatch.Draw(mouseOverTexture, rectangle, Color.White);
             else
                 spriteBatch.Draw(defaultTexture, rectangle, Color.White);
-
-
-            this.text.Draw(spriteBatch, Color.Black);
-
         }
     }
 }

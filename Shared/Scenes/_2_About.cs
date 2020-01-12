@@ -15,14 +15,15 @@ namespace Shared
                 "Game inspired by the Snake Game\n" +
                 "I coded to keep my C# sckils on shape\n" +
                 "Created using MonoGame\n\n" +
+                "I know, I know...\n" +
                 "I need a designer...";
             this.text = new Text(WK.Font.MyFont, new Vector2(20, 50), aboutText);
-            this.toMenu = new Button(new Rectangle(50, 200, 150, 50), Color.LightBlue, Color.Gray);
+            this.toMenu = new Button(new Rectangle(100, 200, 100, 50), WK.Image.MenuButton.Default, WK.Image.MenuButton.MouseOver);
         }
 
         public void Update()
         {
-            toMenu.Update(GoToMenu, "Go to menu");
+            toMenu.Update(GoToMenu);
         }
 
         public void Draw(SpriteBatch spriteBatch)

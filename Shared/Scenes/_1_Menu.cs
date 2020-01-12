@@ -12,15 +12,15 @@ namespace Shared
 
         public _1_Menu()
         {
-            this.PlayButton = new Button(new Rectangle(50, 50, 200, 50), Color.Pink, Color.Gray);
-            this.AboutButton = new Button(new Rectangle(50, 150, 200, 50), Color.Yellow, Color.Gray);
+            this.PlayButton = new Button(new Rectangle(100, 75, 100, 50), WK.Image.PlayButton.Default, WK.Image.PlayButton.MouseOver);
+            this.AboutButton = new Button(new Rectangle(100, 150, 100, 50), WK.Image.AboutButton.Default, WK.Image.AboutButton.MouseOver);
             Game1.isMouseVisible = true;
         }
 
         public void Update()
         {
-            PlayButton.Update(PlayButtonLogic, "Play");
-            AboutButton.Update(AboutButtonLogic, "About");
+            PlayButton.Update(PlayButtonLogic);
+            AboutButton.Update(AboutButtonLogic);
         }
 
         public void Draw(SpriteBatch spriteBatch)
