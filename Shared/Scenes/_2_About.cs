@@ -13,7 +13,7 @@ namespace Shared
         {
             string aboutText =
                 "Game inspired by the Snake Game\n" +
-                "I coded to keep my C# sckils on shape\n" +
+                "I coded to keep my C# skills on shape\n" +
                 "Created using MonoGame\n\n" +
                 "I know, I know...\n" +
                 "I need a designer...";
