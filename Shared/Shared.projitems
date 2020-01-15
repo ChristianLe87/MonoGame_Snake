@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{443C0A1D-8877-4F13-A64D-3D793BC98DA7}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Game1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\Button.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\Coin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\GameOver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\Score.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\Snake.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\Text.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\_0_Intro.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\_1_Menu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\_2_About.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\_3_Level_1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\IScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\Tools.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\WK.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Assets\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Scenes\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Tools\" />
+  </ItemGroup>
+</Project>
