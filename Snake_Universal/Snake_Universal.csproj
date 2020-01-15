@@ -51,6 +51,7 @@
       <Name>Shared</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="..\proyecto_Compartido\proyecto_Compartido.projitems" Label="Shared" Condition="Exists('..\proyecto_Compartido\proyecto_Compartido.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets" Condition="Exists('..\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets')" />
 </Project>

@@ -1,15 +1,18 @@
-﻿using System;
+﻿using AppKit;
 
-namespace Snake_Universal
+namespace Snake_macOS
 {
-    class MainClass
+    static class MainClass
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
+            NSApplication.Init();
+
             using (var game = new proyecto_Compartido.Game2())
             {
                 game.Run();
             }
         }
     }
+
 }
