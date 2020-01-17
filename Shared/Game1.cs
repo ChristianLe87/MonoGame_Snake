@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.InteropServices;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -19,11 +20,11 @@ namespace Shared
         public static bool isMouseVisible = false;
         public static IScene actualScene;
 
-        public Game1()
+        public Game1(string relativePath)
         {
             graphicsDeviceManager = new GraphicsDeviceManager(this);
-            string localPath = "../../../Shared/Content/bin";
-            DirectoryInfo directory = new DirectoryInfo(Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, localPath)));
+
+            DirectoryInfo directory = new DirectoryInfo(Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, relativePath)));
 
             contentManager = this.Content;
             contentManager.RootDirectory = directory.ToString();
