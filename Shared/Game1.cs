@@ -22,7 +22,7 @@ namespace Shared
         public Game1()
         {
             graphicsDeviceManager = new GraphicsDeviceManager(this);
-            string localPath = "../../../../MonoGame_Snake/Content/bin/";
+            string localPath = "../../../Shared/Content/bin";
             DirectoryInfo directory = new DirectoryInfo(Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, localPath)));
 
             contentManager = this.Content;
