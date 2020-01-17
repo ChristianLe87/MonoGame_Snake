@@ -19,6 +19,7 @@ namespace Shared
                 "I need a designer...";
             this.text = new Text(WK.Font.MyFont, new Vector2(20, 50), aboutText);
             this.toMenu = new Button(new Rectangle(100, 200, 100, 50), WK.Image.MenuButton.Default, WK.Image.MenuButton.MouseOver);
+            Game1.isMouseVisible = true;
         }
 
         public void Update()

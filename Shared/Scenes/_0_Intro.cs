@@ -17,6 +17,7 @@ namespace Shared
             this.rectangle = new Rectangle(0, 0, 300, 300);
             this.texture = Tools.GetImageFromPipeline(WK.Image._0_Intro);
             this.startTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+            Game1.isMouseVisible = false;
         }
 
         public void Update()

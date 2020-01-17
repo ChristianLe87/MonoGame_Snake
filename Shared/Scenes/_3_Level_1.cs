@@ -22,6 +22,7 @@ namespace Shared
             scoreVal = 0;
             isGameOver = false;
             gameOver = new GameOver(new Rectangle(0, 0, 300, 300));
+            Game1.isMouseVisible = false;
         }
 
         public void Update()
