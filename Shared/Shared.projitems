@@ -16,10 +16,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Score.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Snake.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Text.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Scenes\_0_Intro.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Scenes\_1_Menu.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Scenes\_2_About.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Scenes\_3_Level_1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\Intro.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\Menu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\About.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\Scene1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\IScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\Tools.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\WK.cs" />

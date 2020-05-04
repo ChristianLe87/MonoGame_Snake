@@ -1,10 +1,8 @@
 ﻿using System;
-using System.IO;
-using System.Runtime.InteropServices;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace Shared
 {
@@ -14,23 +12,29 @@ namespace Shared
         SpriteBatch spriteBatch;
         public static ContentManager contentManager;
 
-        int Width = 300;
-        int Height = 300;
+        public const int canvasWidth = 300;
+        public const int canvasHeight = 300;
 
         public static bool isMouseVisible = false;
-        public static IScene actualScene;
 
-        public Game1(string relativePath)
+        // Levels
+        public static string actualScene;
+        Dictionary<string, IScene> scenes;
+
+        public Game1()
         {
+            this.Content.RootDirectory = Environment.CurrentDirectory;
             graphicsDeviceManager = new GraphicsDeviceManager(this);
-
-            DirectoryInfo directory = new DirectoryInfo(Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, relativePath)));
-
             contentManager = this.Content;
-            contentManager.RootDirectory = directory.ToString();
 
-            graphicsDeviceManager.PreferredBackBufferWidth = Width;
-            graphicsDeviceManager.PreferredBackBufferHeight = Height;
+            // FPS
+            this.IsFixedTimeStep = true;
+            double fps = 60d;
+            this.TargetElapsedTime = TimeSpan.FromSeconds(1d / fps);
+
+            // Window size
+            graphicsDeviceManager.PreferredBackBufferWidth = canvasWidth;
+            graphicsDeviceManager.PreferredBackBufferHeight = canvasHeight;
         }
 
 
@@ -43,26 +47,30 @@ namespace Shared
 
         protected override void LoadContent()
         {
+            actualScene = WK.Scene.Intro;
+
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            actualScene = new _0_Intro();
+
+            this.scenes = new Dictionary<string, IScene>() {
+                { WK.Scene.Intro, new Intro() },
+                { WK.Scene.Menu, new Menu() },
+                { WK.Scene.Scene1, new Scene1() },
+                { WK.Scene.About, new About() }
+            };
         }
 
 
         protected override void Update(GameTime gameTime)
         {
 
-            // For Mobile devices, this logic will close the Game when the Back button is pressed
-            // Exit() is obsolete on iOS
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            Console.WriteLine($"===== Running at FPS: {1f / (gameTime.ElapsedGameTime.Milliseconds / 1000f)} =====");
 
-            if (isMouseVisible == true)
-                IsMouseVisible = true;
+            scenes[actualScene].Update(gameTime);
+
+            if (actualScene == WK.Scene.Menu)
+                this.IsMouseVisible = true;
             else
-                IsMouseVisible = false;
-
-
-            actualScene.Update();
+                this.IsMouseVisible = true;
 
             base.Update(gameTime);
         }
@@ -71,11 +79,13 @@ namespace Shared
         protected override void Draw(GameTime gameTime)
         {
             graphicsDeviceManager.GraphicsDevice.Clear(Color.Black);
+
             spriteBatch.Begin();
 
-            actualScene.Draw(spriteBatch);
+            scenes[actualScene].Draw(spriteBatch);
 
             spriteBatch.End();
+
             base.Draw(gameTime);
         }
     }

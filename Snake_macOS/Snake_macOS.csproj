@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6086EFEF-A218-427F-BE18-7EC7120BA88E}</ProjectGuid>
+    <ProjectGuid>{D2824B71-2CA3-4790-BDA0-AB14F784ED19}</ProjectGuid>
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>Snake_macOS</RootNamespace>
-    <AssemblyName>Snake_macOS</AssemblyName>
+    <AssemblyName>Snakelike</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
@@ -30,6 +30,7 @@
     <HttpClientHandler></HttpClientHandler>
     <LinkMode></LinkMode>
     <XamMacArch></XamMacArch>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -44,9 +45,11 @@
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
+    <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
     <LinkMode>SdkOnly</LinkMode>
     <HttpClientHandler></HttpClientHandler>
     <XamMacArch></XamMacArch>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -71,22 +74,66 @@
     <ImageAsset Include="Assets.xcassets\Contents.json" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\Content\" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="bin\Debug\libopenal.1.dylib">
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="..\packages\MonoGame.Framework.MacOS.3.7.1.189\build\native\libopenal.1.dylib">
       <Kind>Dynamic</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
-    <NativeReference Include="bin\Debug\libSDL2-2.0.0.dylib">
+    <NativeReference Include="..\packages\MonoGame.Framework.MacOS.3.7.1.189\build\native\libSDL2-2.0.0.dylib">
       <Kind>Dynamic</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="..\Shared\Content\About1_100x50_PNG.png">
+      <Link>Resources\Content\About1_100x50_PNG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Shared\Content\About2_100x50_PNG.png">
+      <Link>Resources\Content\About2_100x50_PNG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Shared\Content\Coin_10x10_PNG.png">
+      <Link>Resources\Content\Coin_10x10_PNG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Shared\Content\Intro_300_300_PNG.png">
+      <Link>Resources\Content\Intro_300_300_PNG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Shared\Content\Menu1_100x50_PNG.png">
+      <Link>Resources\Content\Menu1_100x50_PNG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Shared\Content\Menu2_100x50_PNG.png">
+      <Link>Resources\Content\Menu2_100x50_PNG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Shared\Content\MyFont.xnb">
+      <Link>Resources\Content\MyFont.xnb</Link>
+    </BundleResource>
+    <BundleResource Include="..\Shared\Content\Play1_100x50_PNG.png">
+      <Link>Resources\Content\Play1_100x50_PNG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Shared\Content\Play2_100x50_PNG.png">
+      <Link>Resources\Content\Play2_100x50_PNG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Shared\Content\Snake_10x10_PNG.png">
+      <Link>Resources\Content\Snake_10x10_PNG.png</Link>
+    </BundleResource>
   </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />

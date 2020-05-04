@@ -1,13 +1,12 @@
 ﻿using System;
 
-namespace Snake_Universal
+namespace Snake_MultiPlatform
 {
     class MainClass
     {
         public static void Main(string[] args)
         {
-            string relativePath = "../../../Shared/Content/bin";
-            using (var game = new Shared.Game1(relativePath))
+            using (var game = new Shared.Game1())
             {
                 game.Run();
             }

@@ -14,7 +14,7 @@ namespace Shared
 
         public Snake()
         {
-            this.texture = Tools.CreateColorTexture(Color.White);
+            this.texture = Tools.GetImageFromPipeline(WK.Image.Snake_10x10_PNG);//.CreateColorTexture(Color.White);
 
             bodies = new List<Body>();
 
@@ -49,16 +49,16 @@ namespace Shared
                 }
 
                 // check if snake get coin
-                if (GetHeadRectangle().Intersects(_3_Level_1.coin.GetRectangle()))
+                if (GetHeadRectangle().Intersects(Scene1.coin.GetRectangle()))
                 {
-                    _3_Level_1.coin.ChangePosition();
+                    Scene1.coin.ChangePosition();
                     AddBody();
-                    _3_Level_1.scoreVal++;
+                    Scene1.scoreVal++;
                 }
             }
             else
             {
-                _3_Level_1.isGameOver = true;
+                Scene1.isGameOver = true;
             }
         }
 

@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
@@ -13,7 +12,7 @@ namespace Shared
 
         public Coin()
         {
-            texture = Tools.CreateColorTexture(Color.White);
+            texture = Tools.GetImageFromPipeline(WK.Image.Coin_10x10_PNG);
 
             Random random = new Random();
             int pos_x = random.Next(30) * 10;

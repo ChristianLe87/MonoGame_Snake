@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace Shared
 {
@@ -16,9 +14,18 @@ namespace Shared
             return newTexture;
         }
 
-        public static Texture2D GetImageFromPipeline(string assetName)
+        public static Texture2D GetImageFromPipeline(string imageName)
         {
-            return Game1.contentManager.Load<Texture2D>(assetName);
+            string relativePath = $"{imageName}.png";
+            string absolutePath = new DirectoryInfo(Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, relativePath))).ToString();
+
+            FileStream fileStream = new FileStream(absolutePath, FileMode.Open);
+
+            var result = Texture2D.FromStream(Game1.graphicsDeviceManager.GraphicsDevice, fileStream);
+            fileStream.Dispose();
+
+            return result;
+
         }
     }
 }

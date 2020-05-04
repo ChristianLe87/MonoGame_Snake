@@ -1,15 +1,14 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class _2_About : IScene
+    public class About : IScene
     {
         Text text;
         Button toMenu;
 
-        public _2_About()
+        public About()
         {
             string aboutText =
                 "Game inspired by the Snake Game\n" +
@@ -22,7 +21,7 @@ namespace Shared
             Game1.isMouseVisible = true;
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             toMenu.Update(GoToMenu);
         }
@@ -35,7 +34,7 @@ namespace Shared
 
         internal void GoToMenu()
         {
-            Game1.actualScene = new _1_Menu();
+            Game1.actualScene = WK.Scene.Menu;
         }
     }
 }

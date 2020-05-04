@@ -6,14 +6,10 @@ namespace Snake_macOS
     {
         static void Main(string[] args)
         {
-            NSApplication.Init();
-
-            string relativePath = "../../../../../../Shared/Content/bin";
-            using (var game = new Shared.Game1(relativePath))
+            using (var game = new Shared.Game1())
             {
                 game.Run();
             }
         }
     }
-
 }
