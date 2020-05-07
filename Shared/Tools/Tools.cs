@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
+using System.Text.RegularExpressions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -17,7 +19,22 @@ namespace Shared
         public static Texture2D GetImageFromPipeline(string imageName)
         {
             string relativePath = $"{imageName}.png";
+#if __MACOS__
             string absolutePath = new DirectoryInfo(Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, relativePath))).ToString();
+#else
+            string s1 = Assembly.GetExecutingAssembly().Location;
+            string s2 = Assembly.GetExecutingAssembly().ManifestModule.Name;
+            bool first = true;
+            string absolutePath = Regex.Replace(s1, s2, (m) => {
+                if (first)
+                {
+                    first = false;
+                    return "";
+                }
+                return s2;
+            });
+            absolutePath = absolutePath + relativePath;
+#endif
 
             FileStream fileStream = new FileStream(absolutePath, FileMode.Open);
 

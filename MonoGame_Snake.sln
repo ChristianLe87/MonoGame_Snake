@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared", "Shared\Shared.shproj", "{443C0A1D-8877-4F13-A64D-3D793BC98DA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snake_macOS", "Snake_macOS\Snake_macOS.csproj", "{D2824B71-2CA3-4790-BDA0-AB14F784ED19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "macOS", "macOS\macOS.csproj", "{D2824B71-2CA3-4790-BDA0-AB14F784ED19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snake_MultiPlatform", "Snake_MultiPlatform\Snake_MultiPlatform.csproj", "{7DC9A2D6-B1A4-4CE3-BEB8-C50FC58B3366}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiPlatform", "MultiPlatform\MultiPlatform.csproj", "{7DC9A2D6-B1A4-4CE3-BEB8-C50FC58B3366}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

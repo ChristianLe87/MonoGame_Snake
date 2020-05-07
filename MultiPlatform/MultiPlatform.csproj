@@ -6,7 +6,7 @@
     <ProjectGuid>{7DC9A2D6-B1A4-4CE3-BEB8-C50FC58B3366}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Snake_MultiPlatform</RootNamespace>
-    <AssemblyName>Snake_MultiPlatform</AssemblyName>
+    <AssemblyName>Snakelike</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|anycpu' ">

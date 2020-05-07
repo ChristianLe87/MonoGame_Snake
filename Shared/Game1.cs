@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
+using System.Text.RegularExpressions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -23,7 +25,28 @@ namespace Shared
 
         public Game1()
         {
+
+#if __MACOS__
             this.Content.RootDirectory = Environment.CurrentDirectory;
+#else
+            string s1 = Assembly.GetExecutingAssembly().Location;
+            string s2 = Assembly.GetExecutingAssembly().ManifestModule.Name;
+            bool first = true;
+            string s3 = Regex.Replace(s1, s2, (m) =>
+            {
+                if (first)
+                {
+                    first = false;
+                    return "";
+                }
+                return s2;
+            });
+
+            this.Content.RootDirectory = s3;
+#endif
+
+
+
             graphicsDeviceManager = new GraphicsDeviceManager(this);
             contentManager = this.Content;
 

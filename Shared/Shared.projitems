@@ -21,8 +21,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\About.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\Scene1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\IScene.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tools\Tools.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\WK.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\Tools.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Assets\" />
