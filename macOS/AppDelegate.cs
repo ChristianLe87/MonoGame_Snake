@@ -1,9 +1,9 @@
 ﻿using AppKit;
 using Foundation;
 
-namespace Snake_macOS
+namespace macOS
 {
-    [Register("AppDelegate")]
+    /*[Register("AppDelegate")]
     public class AppDelegate : NSApplicationDelegate
     {
         public AppDelegate()
@@ -19,5 +19,5 @@ namespace Snake_macOS
         {
             // Insert code here to tear down your application
         }
-    }
+    }*/
 }

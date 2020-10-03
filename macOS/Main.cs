@@ -1,12 +1,16 @@
 ﻿using AppKit;
+using Shared;
 
-namespace Snake_macOS
+namespace macOS
 {
     static class MainClass
     {
         static void Main(string[] args)
         {
-            using (var game = new Shared.Game1())
+            //NSApplication.Init();
+            //NSApplication.Main(args);
+
+            using (var game = new Game1())
             {
                 game.Run();
             }

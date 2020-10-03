@@ -6,7 +6,7 @@
 //
 using Foundation;
 
-namespace Snake_macOS
+namespace macOS
 {
     [Register("ViewController")]
     partial class ViewController

@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D2824B71-2CA3-4790-BDA0-AB14F784ED19}</ProjectGuid>
+    <ProjectGuid>{FDD5C964-8A77-4C43-B418-7CF7D0FF82B9}</ProjectGuid>
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Snake_macOS</RootNamespace>
-    <AssemblyName>Snakelike</AssemblyName>
+    <RootNamespace>macOS</RootNamespace>
+    <AssemblyName>macOS</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
@@ -30,7 +30,6 @@
     <HttpClientHandler></HttpClientHandler>
     <LinkMode></LinkMode>
     <XamMacArch></XamMacArch>
-    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -49,14 +48,13 @@
     <LinkMode>SdkOnly</LinkMode>
     <HttpClientHandler></HttpClientHandler>
     <XamMacArch></XamMacArch>
-    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.Mac" />
     <Reference Include="MonoGame.Framework">
-      <HintPath>..\packages\MonoGame.Framework.MacOS.3.7.1.189\lib\XamarinMac\MonoGame.Framework.dll</HintPath>
+      <HintPath>..\packages\MonoGame.Framework.DesktopGL.3.8.0.1641\lib\netstandard2.0\MonoGame.Framework.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -75,12 +73,36 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="Resources\Content\" />
+    <Folder Include="Content\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
+    <None Include="..\Shared\Content\About_100x50_Pixelmator.pxm">
+      <Link>Content\About_100x50_Pixelmator.pxm</Link>
+    </None>
+    <None Include="..\Shared\Content\Coin_10x10_Pixemlator.pxm">
+      <Link>Content\Coin_10x10_Pixemlator.pxm</Link>
+    </None>
+    <None Include="..\Shared\Content\Intro_300_300_Pixelmator.pxm">
+      <Link>Content\Intro_300_300_Pixelmator.pxm</Link>
+    </None>
+    <None Include="..\Shared\Content\Menu_100x50.pxm">
+      <Link>Content\Menu_100x50.pxm</Link>
+    </None>
+    <None Include="..\Shared\Content\Menu_300_300_Pixelmator.pxm">
+      <Link>Content\Menu_300_300_Pixelmator.pxm</Link>
+    </None>
+    <None Include="..\Shared\Content\MyFont.xnb">
+      <Link>Content\MyFont.xnb</Link>
+    </None>
+    <None Include="..\Shared\Content\Play_100x50_Pixelmator.pxm">
+      <Link>Content\Play_100x50_Pixelmator.pxm</Link>
+    </None>
+    <None Include="..\Shared\Content\Snake_10x10_Pixelmator.pxm">
+      <Link>Content\Snake_10x10_Pixelmator.pxm</Link>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -94,48 +116,48 @@
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\packages\MonoGame.Framework.MacOS.3.7.1.189\build\native\libopenal.1.dylib">
+    <NativeReference Include="..\packages\MonoGame.Framework.DesktopGL.3.8.0.1641\runtimes\osx\native\libopenal.1.dylib">
       <Kind>Dynamic</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
-    <NativeReference Include="..\packages\MonoGame.Framework.MacOS.3.7.1.189\build\native\libSDL2-2.0.0.dylib">
+    <NativeReference Include="..\packages\MonoGame.Framework.DesktopGL.3.8.0.1641\runtimes\osx\native\libSDL2-2.0.0.dylib">
       <Kind>Dynamic</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="..\Shared\Content\About1_100x50_PNG.png">
-      <Link>Resources\Content\About1_100x50_PNG.png</Link>
+      <Link>Content\About1_100x50_PNG.png</Link>
     </BundleResource>
     <BundleResource Include="..\Shared\Content\About2_100x50_PNG.png">
-      <Link>Resources\Content\About2_100x50_PNG.png</Link>
+      <Link>Content\About2_100x50_PNG.png</Link>
     </BundleResource>
     <BundleResource Include="..\Shared\Content\Coin_10x10_PNG.png">
-      <Link>Resources\Content\Coin_10x10_PNG.png</Link>
+      <Link>Content\Coin_10x10_PNG.png</Link>
     </BundleResource>
     <BundleResource Include="..\Shared\Content\Intro_300_300_PNG.png">
-      <Link>Resources\Content\Intro_300_300_PNG.png</Link>
+      <Link>Content\Intro_300_300_PNG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Shared\Content\Menu_300_300_PNG.png">
+      <Link>Content\Menu_300_300_PNG.png</Link>
     </BundleResource>
     <BundleResource Include="..\Shared\Content\Menu1_100x50_PNG.png">
-      <Link>Resources\Content\Menu1_100x50_PNG.png</Link>
+      <Link>Content\Menu1_100x50_PNG.png</Link>
     </BundleResource>
     <BundleResource Include="..\Shared\Content\Menu2_100x50_PNG.png">
-      <Link>Resources\Content\Menu2_100x50_PNG.png</Link>
-    </BundleResource>
-    <BundleResource Include="..\Shared\Content\MyFont.xnb">
-      <Link>Resources\Content\MyFont.xnb</Link>
+      <Link>Content\Menu2_100x50_PNG.png</Link>
     </BundleResource>
     <BundleResource Include="..\Shared\Content\Play1_100x50_PNG.png">
-      <Link>Resources\Content\Play1_100x50_PNG.png</Link>
+      <Link>Content\Play1_100x50_PNG.png</Link>
     </BundleResource>
     <BundleResource Include="..\Shared\Content\Play2_100x50_PNG.png">
-      <Link>Resources\Content\Play2_100x50_PNG.png</Link>
+      <Link>Content\Play2_100x50_PNG.png</Link>
     </BundleResource>
     <BundleResource Include="..\Shared\Content\Snake_10x10_PNG.png">
-      <Link>Resources\Content\Snake_10x10_PNG.png</Link>
+      <Link>Content\Snake_10x10_PNG.png</Link>
     </BundleResource>
   </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
-  <Import Project="..\packages\MonoGame.Framework.MacOS.3.7.1.189\build\MonoGame.Framework.MacOS.targets" Condition="Exists('..\packages\MonoGame.Framework.MacOS.3.7.1.189\build\MonoGame.Framework.MacOS.targets')" />
+  <Import Project="..\packages\MonoGame.Framework.DesktopGL.3.8.0.1641\build\MonoGame.Framework.DesktopGL.targets" Condition="Exists('..\packages\MonoGame.Framework.DesktopGL.3.8.0.1641\build\MonoGame.Framework.DesktopGL.targets')" />
 </Project>

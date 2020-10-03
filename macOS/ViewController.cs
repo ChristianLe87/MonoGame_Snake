@@ -3,7 +3,7 @@
 using AppKit;
 using Foundation;
 
-namespace Snake_macOS
+namespace macOS
 {
     public partial class ViewController : NSViewController
     {

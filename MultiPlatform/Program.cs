@@ -1,12 +1,13 @@
 ﻿using System;
+using Shared;
 
-namespace Snake_MultiPlatform
+namespace MultiPlatform
 {
-    class MainClass
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            using (var game = new Shared.Game1())
+            using (var game = new Game1())
             {
                 game.Run();
             }
