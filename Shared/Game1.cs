@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using Microsoft.Xna.Framework;
@@ -10,8 +11,9 @@ namespace Shared
 {
     public class Game1 : Game
     {
-        public static GraphicsDeviceManager graphicsDeviceManager;
         SpriteBatch spriteBatch;
+
+        public static GraphicsDeviceManager graphicsDeviceManager;
         public static ContentManager contentManager;
 
         public const int canvasWidth = 300;
@@ -27,27 +29,12 @@ namespace Shared
         {
 
 #if __MACOS__
-            this.Content.RootDirectory = Environment.CurrentDirectory;
+            string absolutePath = WK.Content.Shared.AbsolutePath;
 #else
-            string s1 = Assembly.GetExecutingAssembly().Location;
-            string s2 = Assembly.GetExecutingAssembly().ManifestModule.Name;
-            bool first = true;
-            string s3 = Regex.Replace(s1, s2, (m) =>
-            {
-                if (first)
-                {
-                    first = false;
-                    return "";
-                }
-                return s2;
-            });
-
-            this.Content.RootDirectory = s3;
+            string absolutePath = Path.GetFullPath(WK.Content.Shared.RelativePath);
 #endif
+            this.Content.RootDirectory = absolutePath;
 
-
-
-            graphicsDeviceManager = new GraphicsDeviceManager(this);
             contentManager = this.Content;
 
             // FPS
@@ -56,17 +43,13 @@ namespace Shared
             this.TargetElapsedTime = TimeSpan.FromSeconds(1d / fps);
 
             // Window size
+            graphicsDeviceManager = new GraphicsDeviceManager(this);
             graphicsDeviceManager.PreferredBackBufferWidth = canvasWidth;
             graphicsDeviceManager.PreferredBackBufferHeight = canvasHeight;
-        }
-
-
-        protected override void Initialize()
-        {
-            // code
+            graphicsDeviceManager.ApplyChanges();
             base.Initialize();
-        }
 
+        }
 
         protected override void LoadContent()
         {

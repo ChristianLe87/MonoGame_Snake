@@ -18,22 +18,10 @@ namespace Shared
 
         public static Texture2D GetImageFromPipeline(string imageName)
         {
-            string relativePath = $"{imageName}.png";
 #if __MACOS__
-            string absolutePath = new DirectoryInfo(Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, relativePath))).ToString();
+            string absolutePath = $"{WK.Content.Shared.AbsolutePath}{imageName}.png";
 #else
-            string s1 = Assembly.GetExecutingAssembly().Location;
-            string s2 = Assembly.GetExecutingAssembly().ManifestModule.Name;
-            bool first = true;
-            string absolutePath = Regex.Replace(s1, s2, (m) => {
-                if (first)
-                {
-                    first = false;
-                    return "";
-                }
-                return s2;
-            });
-            absolutePath = absolutePath + relativePath;
+            string absolutePath = Path.GetFullPath($"{WK.Content.Shared.RelativePath}{imageName}.png");
 #endif
 
             FileStream fileStream = new FileStream(absolutePath, FileMode.Open);
