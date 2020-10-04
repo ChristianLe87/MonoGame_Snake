@@ -1,4 +1,6 @@
-﻿using AppKit;
+﻿using System;
+using System.Reflection;
+using AppKit;
 using Shared;
 
 namespace macOS

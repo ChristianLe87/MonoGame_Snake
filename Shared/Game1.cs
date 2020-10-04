@@ -29,7 +29,7 @@ namespace Shared
         {
 
 #if __MACOS__
-            string absolutePath = WK.Content.Shared.AbsolutePath;
+            string absolutePath = Environment.CurrentDirectory;
 #else
             string absolutePath = Path.GetFullPath(WK.Content.Shared.RelativePath);
 #endif
