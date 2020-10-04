@@ -16,8 +16,8 @@ namespace Shared
         public static GraphicsDeviceManager graphicsDeviceManager;
         public static ContentManager contentManager;
 
-        public const int canvasWidth = 300;
-        public const int canvasHeight = 300;
+        public const int canvasWidth = 700;
+        public const int canvasHeight = 700;
 
         public static bool isMouseVisible = false;
 

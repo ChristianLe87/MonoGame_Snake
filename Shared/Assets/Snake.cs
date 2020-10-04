@@ -102,8 +102,8 @@ namespace Shared
             var snakeHead = bodies[bodies.Count - 1];
 
             if (
-                snakeHead.position.X > 290 ||
-                snakeHead.position.Y > 290 ||
+                snakeHead.position.X > (Game1.canvasWidth - 10) ||
+                snakeHead.position.Y > (Game1.canvasHeight - 10) ||
                 snakeHead.position.X < 0 ||
                 snakeHead.position.Y < 0)
             {

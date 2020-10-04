@@ -26,7 +26,7 @@ namespace Shared
             textScore = new Text(WK.Font.MyFont, new Vector2(0, 0));
             scoreVal = 0;
             isGameOver = false;
-            gameOver = new GameOver(new Rectangle(0, 0, 300, 300));
+            gameOver = new GameOver(new Rectangle(0, 0, Game1.canvasWidth, Game1.canvasHeight));
             Game1.isMouseVisible = false;
         }
 

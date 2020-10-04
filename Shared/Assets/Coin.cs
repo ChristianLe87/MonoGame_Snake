@@ -15,8 +15,8 @@ namespace Shared
             texture = Tools.GetImageFromPipeline(WK.Image.Coin_10x10_PNG);
 
             Random random = new Random();
-            int pos_x = random.Next(30) * 10;
-            int pos_y = random.Next(30) * 10;
+            int pos_x = random.Next(Game1.canvasWidth/10) * 10;
+            int pos_y = random.Next(Game1.canvasHeight/10) * 10;
 
             this.position = new Vector2(pos_x,pos_y);
             rectangle = new Rectangle((int)position.X, (int)position.Y, 10, 10);
