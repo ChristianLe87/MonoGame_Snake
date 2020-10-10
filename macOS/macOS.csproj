@@ -87,9 +87,6 @@
     <None Include="..\Shared\Content\Play_100x50_Pixelmator.pxm">
       <Link>Content\Play_100x50_Pixelmator.pxm</Link>
     </None>
-    <None Include="..\Shared\Content\MyFont.xnb">
-      <Link>Content\MyFont.xnb</Link>
-    </None>
     <None Include="..\Shared\Content\Intro_300_300_Pixelmator.pxm">
       <Link>Content\Intro_300_300_Pixelmator.pxm</Link>
     </None>
@@ -157,6 +154,9 @@
     </BundleResource>
     <BundleResource Include="..\Shared\Content\About1_100x50_PNG.png">
       <Link>Content\About1_100x50_PNG.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\Shared\Content\MyFont.xnb">
+      <Link>Content\MyFont.xnb</Link>
     </BundleResource>
   </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
