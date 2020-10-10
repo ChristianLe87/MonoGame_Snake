@@ -18,7 +18,7 @@ namespace Shared
 
         public static Texture2D GetImageFromPipeline(string imageName)
         {
-            string absolutePath = Path.Combine(Environment.CurrentDirectory, $"{imageName}.png");
+            string absolutePath = Path.Combine(Environment.CurrentDirectory, "Content", $"{imageName}.png");
 
             FileStream fileStream = new FileStream(absolutePath, FileMode.Open);
 
