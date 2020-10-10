@@ -3,15 +3,6 @@ namespace Shared
 {
     public class WK
     {
-        public class Content
-        {
-            public class Shared
-            {
-                public const string AbsolutePath = "/Users/christianlehnhoff/Repositorios/GitHub/MonoGame_Snake/Shared/Content/";
-                public const string RelativePath = "../../../../../MonoGame_Snake/Shared/Content/";
-            }
-        }
-
         public class Scene
         {
             public const string Intro = "Intro";

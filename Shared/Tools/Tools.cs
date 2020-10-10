@@ -18,11 +18,7 @@ namespace Shared
 
         public static Texture2D GetImageFromPipeline(string imageName)
         {
-#if __MACOS__
             string absolutePath = Path.Combine(Environment.CurrentDirectory, $"{imageName}.png");
-#else
-            string absolutePath = Path.GetFullPath($"{WK.Content.Shared.RelativePath}{imageName}.png");
-#endif
 
             FileStream fileStream = new FileStream(absolutePath, FileMode.Open);
 

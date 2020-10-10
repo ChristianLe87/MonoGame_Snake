@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using System.Text.RegularExpressions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -16,8 +13,8 @@ namespace Shared
         public static GraphicsDeviceManager graphicsDeviceManager;
         public static ContentManager contentManager;
 
-        public const int canvasWidth = 700;
-        public const int canvasHeight = 700;
+        public const int canvasWidth = 300;
+        public const int canvasHeight = 300;
 
         public static bool isMouseVisible = false;
 
@@ -27,12 +24,8 @@ namespace Shared
 
         public Game1()
         {
-
-#if __MACOS__
             string absolutePath = Environment.CurrentDirectory;
-#else
-            string absolutePath = Path.GetFullPath(WK.Content.Shared.RelativePath);
-#endif
+
             this.Content.RootDirectory = absolutePath;
 
             contentManager = this.Content;
