@@ -93,10 +93,10 @@ namespace Shared
         /// <summary>
         /// Get a SpriteFont from ContentManager
         /// </summary>
-        public static SpriteFont GetFont(ContentManager contentManager, string fontName, string folder = "")
+        /*public static SpriteFont GetFont(ContentManager contentManager, string fontName, string folder = "")
         {
             return contentManager.Load<SpriteFont>(Path.Combine(folder, fontName));
-        }
+        }*/
 
         /// <summary>
         /// Get a new Texture2D from a bigger Texture2D

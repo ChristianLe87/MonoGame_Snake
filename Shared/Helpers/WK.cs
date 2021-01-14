@@ -24,6 +24,8 @@ namespace Shared
 
         public class Image
         {
+            public const string MyFont_PNG = "MyFont_PNG_130x28";
+
             public const string Intro_300_300_PNG = "Intro_300_300_PNG";
             public const string Menu_300_300_PNG = "Menu_300_300_PNG";
 

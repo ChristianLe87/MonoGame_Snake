@@ -86,6 +86,13 @@
       <Link>Content\About1_100x50_PNG.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\Content\MyFont_PNG_130x28.png">
+      <Link>Content\MyFont_PNG_130x28.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Content\Menu_100x50.pxm">
+      <Link>Content\Menu_100x50.pxm</Link>
+    </None>
   </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
