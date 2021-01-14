@@ -14,7 +14,7 @@ namespace Shared
 
         public Snake()
         {
-            this.texture = Tools.GetImageFromPipeline(WK.Image.Snake_10x10_PNG);//.CreateColorTexture(Color.White);
+            this.texture = Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.Snake_10x10_PNG);
 
             bodies = new List<Body>();
 
@@ -85,9 +85,6 @@ namespace Shared
             {
                 spriteBatch.Draw(i.texture2D, i.rectangle, Color.White);
             }
-
-
-
         }
 
 
@@ -102,8 +99,8 @@ namespace Shared
             var snakeHead = bodies[bodies.Count - 1];
 
             if (
-                snakeHead.position.X > (Game1.canvasWidth - 10) ||
-                snakeHead.position.Y > (Game1.canvasHeight - 10) ||
+                snakeHead.position.X > (WK.Default.CanvasWidth - 10) ||
+                snakeHead.position.Y > (WK.Default.CanvasHeight - 10) ||
                 snakeHead.position.X < 0 ||
                 snakeHead.position.Y < 0)
             {

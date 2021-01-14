@@ -8,7 +8,7 @@ namespace Shared
     {
         Snake snake;
         public static Coin coin;
-        Text textScore;
+        Label labelScore;
         public static int scoreVal;
         public static bool isGameOver;
         GameOver gameOver;
@@ -23,10 +23,18 @@ namespace Shared
         {
             this.snake = new Snake();
             coin = new Coin();
-            textScore = new Text(WK.Font.MyFont, new Vector2(0, 0));
+
+            labelScore = new Label(
+                                rectangle: new Rectangle(0, 0, WK.Default.CanvasWidth, WK.Default.CanvasHeight),
+                                spriteFont: Tools.GetFont(Game1.contentManager, WK.Font.MyFont),
+                                text: "",
+                                textAlignment: Label.TextAlignment.Top_Left,
+                                fontColor: Color.White
+                                );
+
             scoreVal = 0;
             isGameOver = false;
-            gameOver = new GameOver(new Rectangle(0, 0, Game1.canvasWidth, Game1.canvasHeight));
+            gameOver = new GameOver(new Rectangle(0, 0, WK.Default.CanvasWidth, WK.Default.CanvasHeight));
             Game1.isMouseVisible = false;
         }
 
@@ -34,27 +42,27 @@ namespace Shared
         {
 
             KeyboardState keyboardState = Keyboard.GetState();
-            if (keyboardState.IsKeyDown(Keys.P) && isGameOver)
+            if (isGameOver)
             {
-                Game1.actualScene = WK.Scene.Menu;
-                Reset();
-            }
+                if (keyboardState.IsKeyDown(Keys.P))
+                {
+                    Game1.actualScene = WK.Scene.Menu;
+                    Reset();
+                }
+                gameOver.Update(topScore: scoreVal);
+            }            
 
             snake.Update();
-            textScore.Update($"Score: {scoreVal}");
+            labelScore.Update($"Score: {scoreVal}");
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             snake.Draw(spriteBatch);
             coin.Draw(spriteBatch);
-            textScore.Draw(spriteBatch, Color.White);
+            labelScore.Draw(spriteBatch);
 
-
-            if (isGameOver == true)
-            {
-                gameOver.Draw(spriteBatch, scoreVal);
-            }
+            if (isGameOver == true) gameOver.Draw(spriteBatch);
         }
 
     }

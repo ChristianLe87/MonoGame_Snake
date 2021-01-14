@@ -3,6 +3,12 @@ namespace Shared
 {
     public class WK
     {
+        public class Default
+        {
+            public const int CanvasWidth = 300;
+            public const int CanvasHeight = 300;
+        }
+
         public class Scene
         {
             public const string Intro = "Intro";

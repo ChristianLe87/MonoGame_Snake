@@ -28,10 +28,11 @@
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
     <HttpClientHandler></HttpClientHandler>
-    <LinkMode></LinkMode>
+    <LinkMode>None</LinkMode>
     <XamMacArch></XamMacArch>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     <AOTMode>None</AOTMode>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -51,6 +52,7 @@
     <HttpClientHandler></HttpClientHandler>
     <XamMacArch></XamMacArch>
     <AOTMode>None</AOTMode>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -81,27 +83,6 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
-    <None Include="..\Shared\Content\Snake_10x10_Pixelmator.pxm">
-      <Link>Content\Snake_10x10_Pixelmator.pxm</Link>
-    </None>
-    <None Include="..\Shared\Content\Play_100x50_Pixelmator.pxm">
-      <Link>Content\Play_100x50_Pixelmator.pxm</Link>
-    </None>
-    <None Include="..\Shared\Content\Intro_300_300_Pixelmator.pxm">
-      <Link>Content\Intro_300_300_Pixelmator.pxm</Link>
-    </None>
-    <None Include="..\Shared\Content\Menu_100x50.pxm">
-      <Link>Content\Menu_100x50.pxm</Link>
-    </None>
-    <None Include="..\Shared\Content\Coin_10x10_Pixemlator.pxm">
-      <Link>Content\Coin_10x10_Pixemlator.pxm</Link>
-    </None>
-    <None Include="..\Shared\Content\About_100x50_Pixelmator.pxm">
-      <Link>Content\About_100x50_Pixelmator.pxm</Link>
-    </None>
-    <None Include="..\Shared\Content\Menu_300_300_Pixelmator.pxm">
-      <Link>Content\Menu_300_300_Pixelmator.pxm</Link>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -125,38 +106,49 @@
     </NativeReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="..\Shared\Content\Snake_10x10_PNG.png">
+    <BundleResource Include="..\Content\Snake_10x10_PNG.png">
       <Link>Content\Snake_10x10_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="..\Shared\Content\Menu_300_300_PNG.png">
+    <BundleResource Include="..\Content\Menu_300_300_PNG.png">
       <Link>Content\Menu_300_300_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="..\Shared\Content\Menu1_100x50_PNG.png">
+    <BundleResource Include="..\Content\Menu1_100x50_PNG.png">
       <Link>Content\Menu1_100x50_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="..\Shared\Content\Coin_10x10_PNG.png">
+    <BundleResource Include="..\Content\Coin_10x10_PNG.png">
       <Link>Content\Coin_10x10_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="..\Shared\Content\Menu2_100x50_PNG.png">
+    <BundleResource Include="..\Content\Menu2_100x50_PNG.png">
       <Link>Content\Menu2_100x50_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="..\Shared\Content\About2_100x50_PNG.png">
+    <BundleResource Include="..\Content\About2_100x50_PNG.png">
       <Link>Content\About2_100x50_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="..\Shared\Content\Play2_100x50_PNG.png">
+    <BundleResource Include="..\Content\Play2_100x50_PNG.png">
       <Link>Content\Play2_100x50_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="..\Shared\Content\Intro_300_300_PNG.png">
+    <BundleResource Include="..\Content\Intro_300_300_PNG.png">
       <Link>Content\Intro_300_300_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="..\Shared\Content\Play1_100x50_PNG.png">
+    <BundleResource Include="..\Content\Play1_100x50_PNG.png">
       <Link>Content\Play1_100x50_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="..\Shared\Content\About1_100x50_PNG.png">
+    <BundleResource Include="..\Content\About1_100x50_PNG.png">
       <Link>Content\About1_100x50_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="..\Shared\Content\MyFont.xnb">
+    <BundleResource Include="..\Content\MyFont.xnb">
       <Link>Content\MyFont.xnb</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />

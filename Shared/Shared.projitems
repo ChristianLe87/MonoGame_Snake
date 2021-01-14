@@ -10,23 +10,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Game1.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Button.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Coin.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\GameOver.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Score.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Snake.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Text.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\Intro.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\Menu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\About.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\Scene1.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tools\IScene.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tools\WK.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tools\Tools.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\IScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\WK.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Tools.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\UI\Button.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\UI\Label.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Assets\" />
     <Folder Include="$(MSBuildThisFileDirectory)Scenes\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Tools\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\UI\" />
   </ItemGroup>
 </Project>

@@ -11,29 +11,23 @@ namespace Shared
         Texture2D mouseOverTexture;
         MouseState previousMouseState;
         bool isMouseOver;
+        Label label;
 
         public delegate void DxOnClickAction();
 
-        public Button(Rectangle rectangle, string defaultImage, string mouseOverImage)
+        public Button(Rectangle rectangle, string text, Texture2D defaultTexture, Texture2D mouseOverTexture, SpriteFont spriteFont, Color fontColor)
         {
             this.rectangle = rectangle;
-            this.defaultTexture = Tools.GetImageFromPipeline(defaultImage);
-            this.mouseOverTexture = Tools.GetImageFromPipeline(mouseOverImage);
+            this.defaultTexture = defaultTexture;
+            this.mouseOverTexture = mouseOverTexture;
             this.isMouseOver = false;
-        }
 
-        public Button(Rectangle rectangle, Color defaultColor, Color mouseOverColor)
-        {
-            this.rectangle = rectangle;
-            this.defaultTexture = Tools.CreateColorTexture(defaultColor);
-            this.mouseOverTexture = Tools.CreateColorTexture(mouseOverColor);
-            this.isMouseOver = false;
+            this.label = new Label(rectangle, spriteFont, text, Label.TextAlignment.Midle_Center, fontColor);
         }
 
         public void Update(DxOnClickAction OnClickAction)
         {
             MouseState mouseState = Mouse.GetState();
-
 
             if (rectangle.Contains(mouseState.X, mouseState.Y))
             {
@@ -51,7 +45,7 @@ namespace Shared
             }
 
             previousMouseState = Mouse.GetState();
-            
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -60,6 +54,8 @@ namespace Shared
                 spriteBatch.Draw(mouseOverTexture, rectangle, Color.White);
             else
                 spriteBatch.Draw(defaultTexture, rectangle, Color.White);
+
+            label.Draw(spriteBatch);
         }
     }
 }

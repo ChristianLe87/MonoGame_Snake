@@ -5,30 +5,37 @@ namespace Shared
 {
     public class GameOver
     {
-        Texture2D texture;
+        Texture2D texture2D;
         Rectangle rectangle;
-        Text text;
+        Label label;
 
         public GameOver(Rectangle rectangle)
         {
-            this.texture = Tools.CreateColorTexture(new Color(Color.Green,255));
-            this.text = new Text(WK.Font.MyFont, new Vector2(100, 100));
+            this.texture2D = Tools.CreateColorTexture(
+                                                    graphicsDevice: Game1.graphicsDeviceManager.GraphicsDevice,
+                                                    color: new Color(Color.Green,255)
+                                                    );
+
+            this.label = new Label(
+                                rectangle: rectangle,// new Rectangle(100, 100, 100, 100),
+                                spriteFont: Tools.GetFont(Game1.contentManager, WK.Font.MyFont),
+                                text: "",
+                                textAlignment: Label.TextAlignment.Midle_Center,
+                                fontColor: Color.White
+                                );
+
             this.rectangle = rectangle;
-
         }
 
-        public void Update()
+        public void Update(int topScore)
         {
-            //texture.
+            label.Update($"Game Over\n'p' to restart\n\nTopScore: {topScore}");
         }
 
-        public void Draw(SpriteBatch spriteBatch, int topScore)
+        public void Draw(SpriteBatch spriteBatch)
         {
-            text.Update($"Game Over\n'p' to restart\n\nTopScore: {topScore}");
-
-            spriteBatch.Draw(texture, rectangle, Color.White);
-            text.Draw(spriteBatch, Color.White);
-            //spriteBatch.DrawString(texture, , position, Color.White);
+            spriteBatch.Draw(texture2D, rectangle, Color.White);
+            label.Draw(spriteBatch);
         }
     }
 }

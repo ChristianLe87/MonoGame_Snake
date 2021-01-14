@@ -11,8 +11,7 @@ namespace Shared
         public Intro()
         {
             this.rectangle = new Rectangle(0, 0, 300, 300);
-            this.texture = Tools.GetImageFromPipeline(WK.Image.Intro_300_300_PNG);
-            Game1.isMouseVisible = false;
+            this.texture = Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.Intro_300_300_PNG);
         }
 
         public void Update(GameTime gameTime)

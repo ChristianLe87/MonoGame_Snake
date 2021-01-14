@@ -5,20 +5,35 @@ namespace Shared
 {
     public class About : IScene
     {
-        Text text;
+        Label label;
         Button toMenu;
+        string aboutText =
+                        "Game inspired by the Snake Game\n" +
+                        "I coded to keep my C# skills on shape\n" +
+                        "Created using MonoGame\n\n" +
+                        "I know, I know...\n" +
+                        "I need a designer...";
 
         public About()
         {
-            string aboutText =
-                "Game inspired by the Snake Game\n" +
-                "I coded to keep my C# skills on shape\n" +
-                "Created using MonoGame\n\n" +
-                "I know, I know...\n" +
-                "I need a designer...";
-            this.text = new Text(WK.Font.MyFont, new Vector2(20, 50), aboutText);
-            this.toMenu = new Button(new Rectangle(100, 200, 100, 50), WK.Image.MenuButton.Default, WK.Image.MenuButton.MouseOver);
-            Game1.isMouseVisible = true;
+
+            this.label = new Label(
+                                rectangle: new Rectangle(0, 0, WK.Default.CanvasWidth, WK.Default.CanvasHeight),
+                                spriteFont: Tools.GetFont(Game1.contentManager, WK.Font.MyFont),
+                                text: aboutText,
+                                textAlignment: Label.TextAlignment.Midle_Center,
+                                fontColor: Color.White,
+                                lineSpacing: 20
+                                );
+
+            this.toMenu = new Button(
+                                rectangle: new Rectangle(100, 200, 100, 50),
+                                text: "",
+                                defaultTexture: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MenuButton.Default),
+                                mouseOverTexture: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MenuButton.MouseOver),
+                                spriteFont: Tools.GetFont(Game1.contentManager, WK.Font.MyFont),
+                                fontColor: Color.Black
+                                );
         }
 
         public void Update(GameTime gameTime)
@@ -29,7 +44,7 @@ namespace Shared
         public void Draw(SpriteBatch spriteBatch)
         {
             toMenu.Draw(spriteBatch);
-            text.Draw(spriteBatch, Color.White);
+            label.Draw(spriteBatch);
         }
 
         internal void GoToMenu()

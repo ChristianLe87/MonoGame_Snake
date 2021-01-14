@@ -14,9 +14,6 @@ namespace Shared
         public static GraphicsDeviceManager graphicsDeviceManager;
         public static ContentManager contentManager;
 
-        public const int canvasWidth = 300;
-        public const int canvasHeight = 300;
-
         public static bool isMouseVisible = false;
 
         // Levels
@@ -26,9 +23,7 @@ namespace Shared
         public Game1()
         {
             string absolutePath = Path.Combine(Environment.CurrentDirectory, "Content");
-
             this.Content.RootDirectory = absolutePath;
-
             contentManager = this.Content;
 
             // FPS
@@ -38,9 +33,12 @@ namespace Shared
 
             // Window size
             graphicsDeviceManager = new GraphicsDeviceManager(this);
-            graphicsDeviceManager.PreferredBackBufferWidth = canvasWidth;
-            graphicsDeviceManager.PreferredBackBufferHeight = canvasHeight;
+            graphicsDeviceManager.PreferredBackBufferWidth = WK.Default.CanvasWidth;
+            graphicsDeviceManager.PreferredBackBufferHeight = WK.Default.CanvasHeight;
             graphicsDeviceManager.ApplyChanges();
+
+            this.IsMouseVisible = true;
+
             base.Initialize();
 
         }
@@ -62,15 +60,7 @@ namespace Shared
 
         protected override void Update(GameTime gameTime)
         {
-
-            Console.WriteLine($"===== Running at FPS: {1f / (gameTime.ElapsedGameTime.Milliseconds / 1000f)} =====");
-
             scenes[actualScene].Update(gameTime);
-
-            if (actualScene == WK.Scene.Menu)
-                this.IsMouseVisible = true;
-            else
-                this.IsMouseVisible = true;
 
             base.Update(gameTime);
         }

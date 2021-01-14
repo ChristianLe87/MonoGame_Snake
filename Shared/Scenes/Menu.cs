@@ -12,9 +12,23 @@ namespace Shared
 
         public Menu()
         {
-            this.PlayButton = new Button(new Rectangle(100, 75, 100, 50), WK.Image.PlayButton.Default, WK.Image.PlayButton.MouseOver);
-            this.AboutButton = new Button(new Rectangle(100, 150, 100, 50), WK.Image.AboutButton.Default, WK.Image.AboutButton.MouseOver);
-            Game1.isMouseVisible = true;
+            this.PlayButton = new Button(
+                                    rectangle: new Rectangle(100, 75, 100, 50),
+                                    text: "",
+                                    defaultTexture: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.PlayButton.Default),
+                                    mouseOverTexture: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.PlayButton.MouseOver),
+                                    spriteFont: Tools.GetFont(Game1.contentManager, WK.Font.MyFont),
+                                    fontColor: Color.White
+                                    );
+
+            this.AboutButton = new Button(
+                                    rectangle: new Rectangle(100, 150, 100, 50),
+                                    text: "",
+                                    defaultTexture: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.AboutButton.Default),
+                                    mouseOverTexture: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.AboutButton.MouseOver),
+                                    spriteFont: Tools.GetFont(Game1.contentManager, WK.Font.MyFont),
+                                    fontColor: Color.White
+                                    );
         }
 
         public void Update(GameTime gameTime)
