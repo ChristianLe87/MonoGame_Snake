@@ -32,7 +32,7 @@ namespace Shared
 
         public class Image
         {
-            //public const string MyFont_5x7_PNG = "MyFont_PNG_130x28";
+            public const string MyFont_5x7_PNG = "MyFont_PNG_130x28";
             public const string MyFont_10x14_PNG = "MyFont_PNG_260x56";
 
             public const string Intro_300_300_PNG = "Intro_300_300_PNG";

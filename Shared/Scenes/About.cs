@@ -20,12 +20,12 @@ namespace Shared
             this.label = new Label(
                                 rectangle: new Rectangle(0, 0, WK.Default.CanvasWidth, WK.Default.CanvasHeight),
                                 spriteFont: Tools.GenerateFont(
-                                                            texture2D: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MyFont_10x14_PNG),
+                                                            texture2D: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MyFont_5x7_PNG),
                                                             chars: WK.Default.FontChars),
                                 text: aboutText,
                                 textAlignment: Label.TextAlignment.Midle_Center,
-                                fontColor: Color.White,
-                                lineSpacing: 20
+                                fontColor: Color.White
+                                //lineSpacing: 20
                                 );
 
             this.toMenu = new Button(

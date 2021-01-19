@@ -68,7 +68,7 @@ namespace Shared
 
         protected override void Draw(GameTime gameTime)
         {
-            graphicsDeviceManager.GraphicsDevice.Clear(Color.Black);
+            graphicsDeviceManager.GraphicsDevice.Clear(Color.LightGreen);
 
             spriteBatch.Begin();
 

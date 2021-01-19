@@ -150,6 +150,14 @@
       <Link>Content\MyFont.xnb</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
+    <BundleResource Include="..\Content\MyFont_PNG_130x28.png">
+      <Link>Content\MyFont_PNG_130x28.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="..\Content\MyFont_PNG_260x56.png">
+      <Link>Content\MyFont_PNG_260x56.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
   </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
