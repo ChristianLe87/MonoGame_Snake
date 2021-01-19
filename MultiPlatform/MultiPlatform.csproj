@@ -93,6 +93,13 @@
     <None Include="..\Content\Menu_100x50.pxm">
       <Link>Content\Menu_100x50.pxm</Link>
     </None>
+    <None Include="..\Content\MyFont_PNG_260x56.png">
+      <Link>Content\MyFont_PNG_260x56.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Content\Menu_300_300_Pixelmator.pxm">
+      <Link>Content\Menu_300_300_Pixelmator.pxm</Link>
+    </None>
   </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

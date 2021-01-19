@@ -29,12 +29,15 @@ namespace Shared
         /// </summary>
         public static SpriteFont GenerateFont(Texture2D texture2D, char[,] chars)
         {
+            int charWidth = texture2D.Width / chars.GetLength(1);
+            int charHigh = texture2D.Height / chars.GetLength(0);
+
             // ===== Implementation =====
             {
                 List<FontChar> fontChars = GetFontChar(chars);
 
                 // The line spacing (the distance from baseline to baseline) of the font
-                List<char> characters = fontChars.Select(x => x.c).ToList();
+                List<char> characters = fontChars.Select(x => x._char).ToList();
 
                 // The rectangles in the font texture containing letters
                 List<Rectangle> glyphBounds = fontChars.Select(x => x.glyphBound).ToList();
@@ -43,7 +46,7 @@ namespace Shared
                 List<Rectangle> cropping = fontChars.Select(x => x.cropping).ToList();
 
                 // The line spacing (the distance from baseline to baseline) of the font
-                int lineSpacing = 10;
+                int lineSpacing = charHigh + 2;
 
                 // The spacing (tracking) between characters in the font
                 float spacing = 0f;
@@ -63,30 +66,32 @@ namespace Shared
             List<FontChar> GetFontChar(char[,] chars)
             {
                 List<FontChar> fontChars = new List<FontChar>();
-                for (int col = 0; col < chars.GetLength(0); col++)
+                for (int column = 0; column < chars.GetLength(0); column++)
                 {
-                    for (int el = 0; el < chars.GetLength(1); el++)
+                    for (int element = 0; element < chars.GetLength(1); element++)
                     {
-                        fontChars.Add(new FontChar(chars[col, el], new Rectangle(el * 5, 7 * col, 5, 7)));
+                        fontChars.Add(new FontChar(
+                                                chars[column, element],
+                                                new Rectangle(element * charWidth, column * charHigh, charWidth, charHigh)));
                     }
                 }
-                return fontChars.Where(x => x.c != ' ').OrderBy(x => x.c).ToList();
+                return fontChars.Where(x => x._char != '\0').OrderBy(x => x._char).ToList();
             }
         }
 
         class FontChar
         {
-            public char c { get; }
+            public char _char { get; }
             public Rectangle glyphBound { get; }
             public Rectangle cropping { get; }
             public Vector3 kerning { get; }
 
             public FontChar(char c, Rectangle glyphBound)
             {
-                this.c = c;
+                this._char = c;
                 this.glyphBound = glyphBound;
                 this.cropping = new Rectangle(0, 0, 0, 0);
-                this.kerning = new Vector3(0, 7, 0);
+                this.kerning = new Vector3(0, glyphBound.Width, glyphBound.Width/3);
             }
         }
 
