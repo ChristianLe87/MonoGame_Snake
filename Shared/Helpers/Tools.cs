@@ -12,15 +12,10 @@ namespace Shared
         /// <summary>
         /// Generate a new texture from a PNG file
         /// </summary>
-        public static Texture2D GetTexture(GraphicsDevice graphicsDevice, ContentManager contentManager, string imageName, string folder = "")
+        public static Texture2D GetTexture(GraphicsDevice graphicsDevice, ContentManager contentManager, string imageName)
         {
-            string absolutePath = new DirectoryInfo(Path.Combine(Path.Combine(contentManager.RootDirectory, folder), $"{imageName}.png")).ToString();
-
-            FileStream fileStream = new FileStream(absolutePath, FileMode.Open);
-
-            var result = Texture2D.FromStream(graphicsDevice, fileStream);
-            fileStream.Dispose();
-
+            string absolutePath = new DirectoryInfo(Path.Combine(contentManager.RootDirectory, $"{imageName}.png")).ToString();
+            Texture2D result = Texture2D.FromFile(graphicsDevice, absolutePath);
             return result;
         }
 
