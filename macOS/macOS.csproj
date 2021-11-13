@@ -7,7 +7,7 @@
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>macOS</RootNamespace>
-    <AssemblyName>macOS</AssemblyName>
+    <AssemblyName>Snake</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
@@ -29,7 +29,7 @@
     <UseRefCounting>true</UseRefCounting>
     <HttpClientHandler></HttpClientHandler>
     <LinkMode>None</LinkMode>
-    <XamMacArch></XamMacArch>
+    <XamMacArch>x86_64</XamMacArch>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     <AOTMode>None</AOTMode>
     <LangVersion>latest</LangVersion>
@@ -121,14 +121,8 @@
     <BundleResource Include="..\Content\MyFont_PNG_130x28.png">
       <Link>Resources\Content\MyFont_PNG_130x28.png</Link>
     </BundleResource>
-    <BundleResource Include="..\Content\MyFont.xnb">
-      <Link>Resources\Content\MyFont.xnb</Link>
-    </BundleResource>
     <BundleResource Include="..\Content\Menu2_100x50_PNG.png">
       <Link>Resources\Content\Menu2_100x50_PNG.png</Link>
-    </BundleResource>
-    <BundleResource Include="..\Content\Menu_100x50.pxm">
-      <Link>Resources\Content\Menu_100x50.pxm</Link>
     </BundleResource>
     <BundleResource Include="..\Content\MyFont_PNG_260x56.png">
       <Link>Resources\Content\MyFont_PNG_260x56.png</Link>
