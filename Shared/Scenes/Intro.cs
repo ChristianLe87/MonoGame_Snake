@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using ChristianTools.Tools;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
@@ -11,7 +12,7 @@ namespace Shared
         public Intro()
         {
             this.rectangle = new Rectangle(0, 0, 300, 300);
-            this.texture = Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.Intro_300_300_PNG);
+            this.texture = Tools.Texture.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.Intro_300_300_PNG);
         }
 
         public void Update(GameTime gameTime)

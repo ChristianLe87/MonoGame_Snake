@@ -1,4 +1,6 @@
 ﻿using System;
+using ChristianTools.Tools;
+using ChristianTools.UI;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -15,21 +17,25 @@ namespace Shared
             this.PlayButton = new Button(
                                     rectangle: new Rectangle(100, 75, 100, 50),
                                     text: "",
-                                    defaultTexture: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.PlayButton.Default),
-                                    mouseOverTexture: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.PlayButton.MouseOver),
-                                    spriteFont: Tools.GenerateFont(
-                                                            texture2D: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MyFont_10x14_PNG),
-                                                            chars: WK.Default.FontChars), fontColor: Color.White
+                                    defaultTexture: Tools.Texture.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.PlayButton.Default),
+                                    mouseOverTexture: Tools.Texture.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.PlayButton.MouseOver),
+                                    spriteFont: Tools.Font.GenerateFont(
+                                                            texture2D: Tools.Texture.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MyFont_10x14_PNG),
+                                                            chars: WK.Default.FontChars),
+                                    fontColor: Color.White,
+                                    ButtonID: ""
                                     );
 
             this.AboutButton = new Button(
                                     rectangle: new Rectangle(100, 150, 100, 50),
                                     text: "",
-                                    defaultTexture: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.AboutButton.Default),
-                                    mouseOverTexture: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.AboutButton.MouseOver),
-                                    spriteFont: Tools.GenerateFont(
-                                                            texture2D: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MyFont_10x14_PNG),
-                                                            chars: WK.Default.FontChars), fontColor: Color.White
+                                    defaultTexture: Tools.Texture.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.AboutButton.Default),
+                                    mouseOverTexture: Tools.Texture.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.AboutButton.MouseOver),
+                                    spriteFont: Tools.Font.GenerateFont(
+                                                            texture2D: Tools.Texture.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MyFont_10x14_PNG),
+                                                            chars: WK.Default.FontChars),
+                                    fontColor: Color.White,
+                                    ButtonID: ""
                                     );
         }
 

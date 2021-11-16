@@ -1,4 +1,5 @@
 ﻿using System;
+using ChristianTools.Tools;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -12,7 +13,7 @@ namespace Shared
 
         public Coin()
         {
-            texture = Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.Coin_10x10_PNG);
+            texture = Tools.Texture.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.Coin_10x10_PNG);
 
             Random random = new Random();
             int pos_x = random.Next(WK.Default.CanvasWidth / 10) * 10;

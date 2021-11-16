@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using ChristianTools.Tools;
+using ChristianTools.UI;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -26,8 +28,8 @@ namespace Shared
 
             labelScore = new Label(
                                 rectangle: new Rectangle(0, 0, WK.Default.CanvasWidth, WK.Default.CanvasHeight),
-                                spriteFont: Tools.GenerateFont(
-                                                            texture2D: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MyFont_10x14_PNG),
+                                spriteFont: Tools.Font.GenerateFont(
+                                                            texture2D: Tools.Texture.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MyFont_10x14_PNG),
                                                             chars: WK.Default.FontChars),
                                 text: "",
                                 textAlignment: Label.TextAlignment.Top_Left,
@@ -66,6 +68,5 @@ namespace Shared
 
             if (isGameOver == true) gameOver.Draw(spriteBatch);
         }
-
     }
 }

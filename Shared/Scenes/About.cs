@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using ChristianTools.Tools;
+using ChristianTools.UI;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
@@ -19,8 +21,8 @@ namespace Shared
 
             this.label = new Label(
                                 rectangle: new Rectangle(0, 0, WK.Default.CanvasWidth, WK.Default.CanvasHeight),
-                                spriteFont: Tools.GenerateFont(
-                                                            texture2D: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MyFont_5x7_PNG),
+                                spriteFont: Tools.Font.GenerateFont(
+                                                            texture2D: Tools.Texture.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MyFont_5x7_PNG),
                                                             chars: WK.Default.FontChars),
                                 text: aboutText,
                                 textAlignment: Label.TextAlignment.Midle_Center,
@@ -31,12 +33,13 @@ namespace Shared
             this.toMenu = new Button(
                                 rectangle: new Rectangle(100, 200, 100, 50),
                                 text: "",
-                                defaultTexture: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MenuButton.Default),
-                                mouseOverTexture: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MenuButton.MouseOver),
-                                spriteFont: Tools.GenerateFont(
-                                                            texture2D: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MyFont_10x14_PNG),
+                                defaultTexture: Tools.Texture.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MenuButton.Default),
+                                mouseOverTexture: Tools.Texture.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MenuButton.MouseOver),
+                                spriteFont: Tools.Font.GenerateFont(
+                                                            texture2D: Tools.Texture.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MyFont_10x14_PNG),
                                                             chars: WK.Default.FontChars),
-                                fontColor: Color.Black
+                                fontColor: Color.Black,
+                                ButtonID: ""
                                 );
         }
 

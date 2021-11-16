@@ -19,14 +19,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\Scene1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\IScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\WK.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Tools.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\UI\Button.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\UI\Label.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Assets\" />
     <Folder Include="$(MSBuildThisFileDirectory)Scenes\" />
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Helpers\UI\" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using ChristianTools.Tools;
+using ChristianTools.UI;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
@@ -11,15 +13,15 @@ namespace Shared
 
         public GameOver(Rectangle rectangle)
         {
-            this.texture2D = Tools.CreateColorTexture(
+            this.texture2D = Tools.Texture.CreateColorTexture(
                                                     graphicsDevice: Game1.graphicsDeviceManager.GraphicsDevice,
                                                     color: new Color(Color.Green, 255)
                                                     );
 
             this.label = new Label(
                                 rectangle: rectangle,
-                                spriteFont: Tools.GenerateFont(
-                                                            texture2D: Tools.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MyFont_10x14_PNG),
+                                spriteFont: Tools.Font.GenerateFont(
+                                                            texture2D: Tools.Texture.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MyFont_10x14_PNG),
                                                             chars: WK.Default.FontChars),
                                 text: "",
                                 textAlignment: Label.TextAlignment.Midle_Center,
