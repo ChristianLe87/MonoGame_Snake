@@ -152,4 +152,8 @@
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <Import Project="..\packages\MonoGame.Framework.DesktopGL.3.8.0.1641\build\MonoGame.Framework.DesktopGL.targets" Condition="Exists('..\packages\MonoGame.Framework.DesktopGL.3.8.0.1641\build\MonoGame.Framework.DesktopGL.targets')" />
+  <Import Project="..\ChristianTools.Components\ChristianTools.Components.projitems" Label="Shared" />
+  <Import Project="..\ChristianTools.Helpers\ChristianTools.Helpers.projitems" Label="Shared" />
+  <Import Project="..\ChristianTools.UI\ChristianTools.UI.projitems" Label="Shared" />
+  <Import Project="..\ChristianTools.Tools\ChristianTools.Tools.projitems" Label="Shared" />
 </Project>
