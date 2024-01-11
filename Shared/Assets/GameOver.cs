@@ -24,7 +24,7 @@ namespace Shared
                                                             texture2D: Tools.Texture.GetTexture(Game1.graphicsDeviceManager.GraphicsDevice, Game1.contentManager, WK.Image.MyFont_10x14_PNG),
                                                             chars: WK.Default.FontChars),
                                 text: "",
-                                textAlignment: Label.TextAlignment.Midle_Center,
+                                textAlignment: Label.TextAlignment.Top_Left,
                                 fontColor: Color.White
                                 );
 
@@ -33,7 +33,7 @@ namespace Shared
 
         public void Update(int topScore)
         {
-            label.Update($"Game Over\n'p' to restart\n\nTopScore: {topScore}");
+            label.Update($"Game Over\n\n\n'p' to restart\n\n\nTopScore: {topScore}");
         }
 
         public void Draw(SpriteBatch spriteBatch)
